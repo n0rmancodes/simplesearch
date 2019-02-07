@@ -1,0 +1,46 @@
+h1 {
+  font-family: Arial;
+  font-size: 72px;
+  color: black;
+}
+
+h2 {
+  font-family: Verdana;
+  font-size: 24px;
+  color: black;
+}
+
+input {
+  width: 300px;
+  height: 30px;
+  color: black;
+}
+
+button {
+  height: 35px;
+}
+
+select {
+  height: 35px; 
+}
+
+p {
+  color: black;
+  font-family: Verdana;
+  font-size: 14px
+}
+
+a {
+  color: red;
+  font-family: Verdana;
+  font-size: 14px;
+}
+
+body {
+  height:100%;
+  margin:0;
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+  background-size:100% 100%;
+  background-image: url("/img/background_1.jpg") 
+}
