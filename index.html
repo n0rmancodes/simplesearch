@@ -53,6 +53,8 @@
           search()
         } 
       });
+      if (new Date().getSeconds === 0)
+      {gendate()}
       var w = document.getElementById("weather")
       window.onload(onloadall())
       function onloadall() {
