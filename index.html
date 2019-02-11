@@ -32,7 +32,6 @@
     <p id="datetime" style="display: block;"></p>
     <input id="search" placeholder="Search with any search engine!" maxlength="100"><button onclick="search()">Search</button>
 	<button id="sbuttons" onclick="document.getElementById('weather').style.display = 'none'; document.getElementById('settings').style.display = 'block';">Settings</button><button onclick="genforecast(); document.getElementById('weather').style.display = 'block'; document.getElementById('settings').style.display = 'none';">Weather</button>
-    <p id="ss" style="display: block;"><a href="https://facebook.com/">Facebook</a> | <a href="https://www.twitter.com/">Twitter</a> | <a href="https://discordapp.com/">Discord</a> | <a href="https://reddit.com/">Reddit</a> | <a href="https://youtube.com/">YouTube</a> | <a href="https://wikipedia.org/">Wikipedia</a> | <a href="https://amazon.com/">Amazon</a> | <a href="https://ebay.com/">Ebay</a> | <a href="https://open.spotify.com/">Spotify</a></p>
     <div id="weather" style="background-color:white; width: 675px; height: 250px; display:none;"></div>
     <div id="settings" style="background-color:white; width:675px; display:none;">
       <p style="color:black;">Search Engine:</p><select id="se"><option value="ddg" selected="selected">DuckDuckGo</option><option value="google">Google</option><option value="yahoo">Yahoo!</option><option value="bing">Bing</option><option value="dp">Dogpile</option></select>
@@ -40,7 +39,6 @@
       <div id="doptions" style="display:none;">
         <p style="color:black;">Welcome Text</p><select id="welop" autocomplete="on"><option value="y" selected="selected">Enabled</option><option value="n">Disabled</option></select>
         <p style="color:black;">Date/Time Text</p><select id="dtop" autocomplete="on"><option value="y" selected="selected">Enabled</option><option value="n">Disabled</option></select>
-        <p style="color:black;">Suggested Websites</p><select id="ssop" autocomplete="on"><option value="y" selected="selected">Enabled</option><option value="n">Disabled</option></select>
       </div>
     <p style="color: black;">These settings will save for only this browser session.</p>
     <button style="display:block;" onclick="document.getElementById('settings').style.display = 'none'; document.getElementById('dbutton').style.display = 'block'; document.getElementById('doptions').style.display = 'none'; checksettings();">Close Settings</button>
