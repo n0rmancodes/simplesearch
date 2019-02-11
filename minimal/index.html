@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>SimpleSearch (Minimalistic Edition)</title>
+		<link rel="shortcut icon" type="image/png" href="https://simplesearch.neocities.org/img/favicon.ico">
+		<style>
+			body {
+				background-color: #282828;
+			}
+			h1 {
+				font-family: Arial;
+				font-size: 72px;
+				color: white;
+			}
+			p {
+				font-family: Arial;
+				font-size: 16px;
+				color: white;
+			}
+			input {
+				width: 300px;
+				height: 30px;
+				color: black;
+			}
+			button {
+				height: 35px;
+			}
+		</style>
+	</head>
+  <body>
+    <div id="header"><center>
+	<h1>SimpleSearch</h1><input id="search" placeholder="Search with DuckDuckGo" maxlength="100"><button onclick="search()">🔎</button>
+    </center></div>
+	<script>
+      var s = document.getElementById("search");
+      s.addEventListener("keydown", function (e) {
+        if (e.keyCode == 13) {
+          search()
+        } 
+      });
+      window.onload(onloadall())
+      function onloadall() {
+        s.focus();
+      }
+      function search() {
+        var query = document.getElementById("search").value;
+        var searchb4plus = "https://www.duckduckgo.com/?q=" + query
+        var search = searchb4plus.split(' ').join('+');
+        window.open(search, "_self");
+      }
+    </script>
+</body></html>
