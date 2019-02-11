@@ -3,34 +3,34 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>SimpleSearch | The best homepage... ever!</title>
-		<link rel="shortcut icon" type="image/png" href="https://simplesearch.neocities.org/img/favicon.ico">
+		<link rel="shortcut icon" href="https://raw.githubusercontent.com/n0rmancodes/simplesearch/master/img/favicon.ico">
 		<script>
 			window.onload(getStylesheet())
 			function getStylesheet() {
 			var currentTime = new Date().getHours();
 			if (0 <= currentTime&&currentTime < 5) {
-				document.write("<link rel='stylesheet' href='/css/home/night/style.css' type='text/css'>");
+				document.write("<link rel='stylesheet' href='css/home/night/style.css' type='text/css'>");
 			}
 			if (5 <= currentTime&&currentTime < 11) {
-				document.write("<link rel='stylesheet' href='/css/home/style.css' type='text/css'>");
+				document.write("<link rel='stylesheet' href='css/home/style.css' type='text/css'>");
 			}
 			if (11 <= currentTime&&currentTime < 16) {
-				document.write("<link rel='stylesheet' href='/css/home/style.css' type='text/css'>");
+				document.write("<link rel='stylesheet' href='css/home/style.css' type='text/css'>");
 			}
 			if (16 <= currentTime&&currentTime < 22) {
-				document.write("<link rel='stylesheet' href='/css/home/evening/style.css' type='text/css'>");
+				document.write("<link rel='stylesheet' href='css/home/evening/style.css' type='text/css'>");
 			}
 			if (22 <= currentTime&&currentTime <= 24) {
-			document.write("<link rel='stylesheet' href='/css/home/night/style.css' type='text/css'>");
+				document.write("<link rel='stylesheet' href='css/home/night/style.css' type='text/css'>");
 			}
-			}
+		}
     </script>
 	</head>
   <body>
     <div id="header"><center><h1>SimpleSearch</h1>
-    <h2 id="welcome" style="display: block;">.</h2>
+    <h2 id="welcome" style="display: block;"></h2>
     <p id="datetime" style="display: block;"></p>
-    <input id="search" placeholder="Search with any search engine!" maxlength="100"><button onclick="search()">🔎</button><button id="sbuttons" onclick="document.getElementById('weather').style.display = 'none'; document.getElementById('settings').style.display = 'block';">⚙️</button><button onclick="genforecast(); document.getElementById('weather').style.display = 'block'; document.getElementById('settings').style.display = 'none';">☔</button>
+    <input id="search" placeholder="Search with any search engine!" maxlength="100"><button onclick="search()">??</button><button id="sbuttons" onclick="document.getElementById('weather').style.display = 'none'; document.getElementById('settings').style.display = 'block';">??</button><button onclick="genforecast(); document.getElementById('weather').style.display = 'block'; document.getElementById('settings').style.display = 'none';">?</button>
     <p id="ss" style="display: block;"><a href="https://facebook.com/">Facebook</a> | <a href="https://www.twitter.com/">Twitter</a> | <a href="https://discordapp.com/">Discord</a> | <a href="https://reddit.com/">Reddit</a> | <a href="https://youtube.com/">YouTube</a> | <a href="https://wikipedia.org/">Wikipedia</a> | <a href="https://amazon.com/">Amazon</a> | <a href="https://ebay.com/">Ebay</a> | <a href="https://open.spotify.com/">Spotify</a></p>
     <div id="weather" style="background-color:white; width: 675px; height: 250px; display:none;"></div>
     <div id="settings" style="background-color:white; width:675px; display:none;">
@@ -45,7 +45,7 @@
     <button style="display:block;" onclick="document.getElementById('settings').style.display = 'none'; document.getElementById('dbutton').style.display = 'block'; document.getElementById('doptions').style.display = 'none'; checksettings();">Close Settings</button>
     </div>
     </center></div>
-    <center><p id="footer" style="font-size:10px;">Check out the things I am working to implement <a style="font-size:10px;" href="https://simplesearch.neocities.org/blog">here</a>. See the background <a style="font-size:10px;" onclick="hideeverything()">by itself!</a></p></center>
+    <center><p id="footer" style="font-size:10px;">See the background <a style="font-size:10px;" onclick="hideeverything()">by itself!</a> | <a href="/minimal">Minimalistic Version</a></p></center>
     <script>
       var s = document.getElementById("search");
       s.addEventListener("keydown", function (e) {
@@ -53,6 +53,8 @@
           search()
         } 
       });
+      if (new Date().getSeconds === 00)
+      {gendate()}
       var w = document.getElementById("weather")
       window.onload(onloadall())
       function onloadall() {
@@ -97,7 +99,7 @@
         document.getElementById("datetime").innerHTML = curdat;
       }
       function bored() {
-        var bored = ["http://patorjk.com/games/snake/", "https://www.newgrounds.com/", "https://jsnes.org/", "https://bit.ly/2LSvXYJ", "https://reallyidioticandkoolsite.neocities.org/", "https://halome.nu/"];
+        var bored = ["http://patorjk.com/games/snake/", "https://www.newgrounds.com/", "https://jsnes.org/", "https://bit.ly/2LSvXYJ", "https://halome.nu/"];
         var b0red = bored[Math.floor(Math.random() * bored.length)];
         window.open(b0red);
       }
