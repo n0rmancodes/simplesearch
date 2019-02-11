@@ -31,7 +31,6 @@
     <h2 id="welcome" style="display: block;"></h2>
     <p id="datetime" style="display: block;"></p>
     <input id="search" placeholder="Search with any search engine!" maxlength="100"><button onclick="search()">Search</button>
-	<button id="sbuttons" onclick="document.getElementById('weather').style.display = 'none'; document.getElementById('settings').style.display = 'block';">Settings</button><button onclick="genforecast(); document.getElementById('weather').style.display = 'block'; document.getElementById('settings').style.display = 'none';">Weather</button>
     <div id="weather" style="background-color:white; width: 675px; height: 250px; display:none;"></div>
     <div id="settings" style="background-color:white; width:675px; display:none;">
       <p style="color:black;">Search Engine:</p><select id="se"><option value="ddg" selected="selected">DuckDuckGo</option><option value="google">Google</option><option value="yahoo">Yahoo!</option><option value="bing">Bing</option><option value="dp">Dogpile</option></select>
@@ -44,7 +43,7 @@
     <button style="display:block;" onclick="document.getElementById('settings').style.display = 'none'; document.getElementById('dbutton').style.display = 'block'; document.getElementById('doptions').style.display = 'none'; checksettings();">Close Settings</button>
     </div>
     </center></div>
-    <center><p id="footer" style="font-size:10px;">See the background <a style="font-size:10px;" onclick="hideeverything()">by itself!</a> | <a style="font-size:10px;" href="minimal">Minimalistic Version</a></p></center>
+    <center><p id="footer" style="font-size:10px;">See the background <a style="font-size:10px;" onclick="hideeverything()">by itself!</a> | <a style="font-size:10px;" href="minimal">Minimalistic Version</a> | <a onclick="document.getElementById('weather').style.display = 'none'; document.getElementById('settings').style.display = 'block';" style="font-size:10px;">Settings</p> | <a style="font-size:10px;" onclick="genforecast(); document.getElementById('weather').style.display = 'block'; document.getElementById('settings').style.display = 'none';">Weather</a></center>
     <script>
       var s = document.getElementById("search");
       s.addEventListener("keydown", function (e) {
