@@ -14,7 +14,8 @@ input {
   width: 300px;
   height: 30px;
   font-family: Roboto;
-  color: white
+  text-transform: lowercase;
+  color:white;
 }
 
 button {
