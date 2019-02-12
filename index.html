@@ -34,7 +34,7 @@
 		<h2 id="welcome" style="display: block;"></h2>
 		<p id="datetime" style="display: block;"></p>
 		<p id="footer" style="font-size:10px;">see the background <a style="font-size:10px; text-decoration:underline;" onclick="hideeverything()">by itself!</a> | <a style="font-size:10px;" href="minimal">minimalistic version</a> | <a onclick="document.getElementById('weather').style.display = 'none'; document.getElementById('settings').style.display = 'block';" style="font-size:10px; text-decoration:underline;">settings</a> | <a style="font-size:10px; text-decoration:underline;" onclick="genforecast(); document.getElementById('weather').style.display = 'block'; document.getElementById('settings').style.display = 'none';">weather</a> | <a style="font-size:10px;" href="https://github.com/n0rmancodes/simplesearch">github repo</a></p>
-		<inputid="search" autocomplete="off" placeholder="Search now." maxlength="100" title="Change your search engine with the Settings link below."><button onclick="search()">Search</button>
+		<input id="search" autocomplete="off" placeholder="search now" maxlength="100" title="change your search engine with the settings link below."><button onclick="search()">search</button>
 		<div style="width: 10px;"></div>
 		<div id="weather" style="background-color:white; width: 675px; height: 250px; display:none;"></div>
 		<div id="settings" style="background-color:white; width:675px; display:none;">
