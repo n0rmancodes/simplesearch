@@ -77,7 +77,7 @@
         window.open(search, "_self");
       }
       function genwel() {
-        var wel = ["What's up?", "I hope your day is well.", "Smile!", "Start seaching.", "Need a break? Play a game.", "Relax.", "Enjoy what you have.", "Always stay humble and kind!", "Yes, we're open.", "We are compatible with DuckDuckGo <a href='https://duckduckgo.com/bang' style='font-family: Verdana; font-size:24px'>bangs!</a>", "Bored? <a onclick=bored() style='font-family: Verdana; font-size:24px'>Click me.</a>", "Love yourself.", "Be positive.", "How's the weather out there?"];
+        var wel = ["what's up?", "i hope your day is well.", "smile!", "start seaching.", "relax.", "enjoy what you have.", "always stay humble and kind!", "yes, we're open.", "we are compatible with duckduckgo <a href='https://duckduckgo.com/bang' style='font-family: Verdana; font-size:24px'>bangs!</a>", "love yourself.", "be positive.", "how's the weather out there?"];
         var weltxt = wel[Math.floor(Math.random() * wel.length)];
         document.getElementById("welcome").innerHTML = weltxt;
       }
@@ -86,7 +86,7 @@
         document.getElementById("footer").style.display = 'none';
         document.getElementById("settings").style.display = 'none';
         document.getElementById("weather").style.display = 'none';
-        alert("Refresh to get this back to normal!")
+        alert("refresh to get this back to normal!")
       }
       function gendate() {
         var d = new Date();
@@ -99,13 +99,8 @@
         hour = hour < 10 ? '0'+hour : hour;
 	day = day < 10 ? '0'+day : day;
         m = m < 10 ? '0'+m : m;
-        var curdat = "Today's date is " + m + "/" + day + "/" + year + " and it is " + hour + ":" + minute + "! Hope you're having a good day!"
+        var curdat = "today's date is " + m + "/" + day + "/" + year + " and it is " + hour + ":" + minute + "! i hope you're having a good day!"
         document.getElementById("datetime").innerHTML = curdat;
-      }
-      function bored() {
-        var bored = ["http://patorjk.com/games/snake/", "https://www.newgrounds.com/", "https://jsnes.org/", "https://bit.ly/2LSvXYJ", "https://halome.nu/"];
-        var b0red = bored[Math.floor(Math.random() * bored.length)];
-        window.open(b0red);
       }
       function genforecast() 
       {
