@@ -61,7 +61,7 @@
       window.onload(onloadall())
       function onloadall() {
         s.focus();
-		genwel();
+	genwel();
         gendate();
         checksettings();
       }
@@ -97,6 +97,8 @@
         var minute = d.getMinutes();
         minute = minute < 10 ? '0'+minute : minute;
         hour = hour < 10 ? '0'+hour : hour;
+	day = day < 10 ? '0'+day : day;
+        m = m < 10 ? '0'+m : m;
         var curdat = "Today's date is " + m + "/" + day + "/" + year + " and it is " + hour + ":" + minute + "! Hope you're having a good day!"
         document.getElementById("datetime").innerHTML = curdat;
       }
