@@ -29,21 +29,22 @@
     </script>
 	</head>
   <body>
-    <div id="header"><center><h1>SimpleSearch</h1>
-    <h2 id="welcome" style="display: block;"></h2>
-    <p id="datetime" style="display: block;"></p>
-    <input id="search" autocomplete="off" placeholder="Search now." maxlength="100" title="Change your search engine with the Settings link below."><button onclick="search()">Search</button>
-    <div id="weather" style="background-color:white; width: 675px; height: 250px; display:none;"></div>
-    <div id="settings" style="background-color:white; width:675px; display:none;">
-      <p style="color:black;">Search Engine:</p><select id="se"><option value="ddg" selected="selected">DuckDuckGo</option><option value="google">Google</option><option value="yahoo">Yahoo!</option><option value="bing">Bing</option><option value="dp">Dogpile</option></select>
-      <button id="dbutton" style="display:block;" title="Choose to display what on the homepage." onclick="document.getElementById('doptions').style.display = 'block'; document.getElementById('dbutton').style.display = 'none'">Display Options</button>
-      <div id="doptions" style="display:none;">
-        <p style="color:black;">Welcome Text</p><select id="welop" autocomplete="on"><option value="y" selected="selected">Enabled</option><option value="n">Disabled</option></select>
-        <p style="color:black;">Date/Time Text</p><select id="dtop" autocomplete="on"><option value="y" selected="selected">Enabled</option><option value="n">Disabled</option></select>
-      </div>
-    <p style="color: black;">These settings will save for only this browser session.</p>
-    <button style="display:block;" onclick="document.getElementById('settings').style.display = 'none'; document.getElementById('dbutton').style.display = 'block'; document.getElementById('doptions').style.display = 'none'; checksettings();">Close Settings</button>
-    </div>
+    <div id="header"><center>
+		<h1>SimpleSearch</h1>
+		<h2 id="welcome" style="display: block;"></h2>
+		<p id="datetime" style="display: block;"></p>
+		<input id="search" autocomplete="off" placeholder="Search now." maxlength="100" title="Change your search engine with the Settings link below."><button onclick="search()">Search</button>
+		<div id="weather" style="background-color:white; width: 675px; height: 250px; display:none;"></div>
+		<div id="settings" style="background-color:white; width:675px; display:none;">
+			<p style="color:black;">Search Engine:</p><select id="se"><option value="ddg" selected="selected">DuckDuckGo</option><option value="google">Google</option><option value="yahoo">Yahoo!</option><option value="bing">Bing</option><option value="dp">Dogpile</option></select>
+			<button id="dbutton" style="display:block;" title="Choose to display what on the homepage." onclick="document.getElementById('doptions').style.display = 'block'; document.getElementById('dbutton').style.display = 'none'">Display Options</button>
+			<div id="doptions" style="display:none;">
+				<p style="color:black;">Welcome Text</p><select id="welop" autocomplete="on"><option value="y" selected="selected">Enabled</option><option value="n">Disabled</option></select>
+				<p style="color:black;">Date/Time Text</p><select id="dtop" autocomplete="on"><option value="y" selected="selected">Enabled</option><option value="n">Disabled</option></select>
+			</div>
+			<p style="color: black;">These settings will save for only this browser session.</p>
+			<button style="display:block;" onclick="document.getElementById('settings').style.display = 'none'; document.getElementById('dbutton').style.display = 'block'; document.getElementById('doptions').style.display = 'none'; checksettings();">Close Settings</button>
+		</div>
     </center></div>
     <center><p id="footer" style="font-size:10px;">See the background <a style="font-size:10px; text-decoration:underline;" onclick="hideeverything()">by itself!</a> | <a style="font-size:10px;" href="minimal">Minimalistic Version</a> | <a onclick="document.getElementById('weather').style.display = 'none'; document.getElementById('settings').style.display = 'block';" style="font-size:10px; text-decoration:underline;">Settings</a> | <a style="font-size:10px; text-decoration:underline;" onclick="genforecast(); document.getElementById('weather').style.display = 'block'; document.getElementById('settings').style.display = 'none';">Weather</a> | <a style="font-size:10px;" href="https://github.com/n0rmancodes/simplesearch">Github Repo</a></p></center>
     <script>
