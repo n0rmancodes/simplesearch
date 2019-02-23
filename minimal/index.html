@@ -25,6 +25,7 @@
 				height: 30px;
 				color: black;
 				font-family: Roboto;
+				text-transform: lowercase;
 			}
 			button {
 				height: 35px;
@@ -33,7 +34,7 @@
 	</head>
   <body>
     <div id="header"><center>
-	<h1>simplesearch</h1><input id="search" placeholder="search with duckduckgo" maxlength="100"><button onclick="search()">🔎</button>
+	<h1>simplesearch</h1><input id="search" placeholder="search with duckduckgo" maxlength="100" autocomplete=off><button onclick="search()">🔎</button>
     </center></div>
 	<script>
       var s = document.getElementById("search");
