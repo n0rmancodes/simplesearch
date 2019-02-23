@@ -41,8 +41,8 @@
 			<p style="color:black;">search engine:</p><select id="se"><option value="ddg" selected="selected">duckduckgo</option><option value="google">google</option><option value="yahoo">yahoo!</option><option value="bing">bing</option><option value="dp">dogpile</option></select>
 			<button id="dbutton" style="display:block;" title="choose to display what on the homepage." onclick="document.getElementById('doptions').style.display = 'block'; document.getElementById('dbutton').style.display = 'none'">display options</button>
 			<div id="doptions" style="display:none;">
-				<p style="color:black;">welcome text</p><select id="welop" autocomplete="on"><option value="y" selected="selected">enabled</option><option value="n">Disabled</option></select>
-				<p style="color:black;">date/time text</p><select id="dtop" autocomplete="on"><option value="y" selected="selected">enabled</option><option value="n">Disabled</option></select>
+				<p style="color:black;">welcome text</p><select id="welop" autocomplete="on"><option value="y" selected="selected">enabled</option><option value="n">disabled</option></select>
+				<p style="color:black;">date/time text</p><select id="dtop" autocomplete="on"><option value="y" selected="selected">enabled</option><option value="n">disabled</option></select>
 			</div>
 			<p style="color: black;">these settings will save for only this browser session.</p>
 			<button style="display:block;" onclick="document.getElementById('settings').style.display = 'none'; document.getElementById('dbutton').style.display = 'block'; document.getElementById('doptions').style.display = 'none'; checksettings();">close settings</button>
