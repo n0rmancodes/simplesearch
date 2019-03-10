@@ -73,7 +73,7 @@
         if (se === "yahoo") {var searchb4plus = "https://search.yahoo.com/search?p=" + query}
         if (se === "dp") {var searchb4plus = "https://results.dogpile.com/search/web?q=" + query}
         if (se === "bing") {var searchb4plus = "https://www.bing.com/search?q=" + query}
-        var search = searchb4plus.split(' ').join('+');
+        var search = encodeURIComponent(searchb4plus);
         window.open(search, "_self");
       }
       function genwel() {

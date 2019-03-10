@@ -50,7 +50,7 @@
       function search() {
         var query = document.getElementById("search").value;
         var searchb4plus = "https://www.duckduckgo.com/?q=" + query
-        var search = searchb4plus.split(' ').join('+');
+        var search = encodeURIComponent(searchb4plus);
         window.open(search, "_self");
       }
     </script>
