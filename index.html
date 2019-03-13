@@ -35,7 +35,7 @@
 		<p id="datetime" style="display: block;"></p>
 		<p id="footer" style="font-size:10px;">see the background <a style="font-size:10px; text-decoration:underline;" onclick="hideeverything()">by itself!</a> | <a style="font-size:10px; text-decoration:underline;" onclick="genforecast(); document.getElementById('weather').style.display = 'block';">weather</a> | <a style="font-size:10px;" href="https://github.com/n0rmancodes/simplesearch">github repo</a></p>
 		<input id="search" autocomplete="off" placeholder="search now" maxlength="100" title="change your search engine with the box on the side."><select id="se"><option value="ddg" selected="selected">duckduckgo</option><option value="google">google</option><option value="yahoo">yahoo!</option><option value="bing">bing</option><option value="dp">dogpile</option></select><button onclick="search()">search</button>
-		<div style="width: 10px;"></div>
+		<div style="display:none;" id="load"><img src="img/ajax-loader.gif"></div>
 		<div id="weather" style="background-color:white; width: 675px; height: 250px; display:none;"></div>
     </center></div>
     <script>
@@ -57,6 +57,7 @@
       function search() {
         var se = document.getElementById("se").value;
         var query = encodeURIComponent(document.getElementById("search").value);
+	document.getElementById("load").style.display = "block"
         if (se === "ddg") {var search = "https://www.duckduckgo.com/?q=" + query}
         if (se === "google") {var search = "https://www.google.com/search?q=" + query}
         if (se === "yahoo") {var search = "https://search.yahoo.com/search?p=" + query}
