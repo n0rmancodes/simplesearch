@@ -7,24 +7,12 @@
 		<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 		
 		<script>
-			window.onload(getStylesheet())
-			function getStylesheet() {
-				var currentTime = new Date().getHours();
-				if (0 <= currentTime&&currentTime < 5) {
-					document.write("<link rel='stylesheet' href='css/home/night/style.css' type='text/css'>");
-				}
-				if (5 <= currentTime&&currentTime < 11) {
-					document.write("<link rel='stylesheet' href='css/home/style.css' type='text/css'>");
-				}
-				if (11 <= currentTime&&currentTime < 16) {
-					document.write("<link rel='stylesheet' href='css/home/style.css' type='text/css'>");
-				}
-				if (16 <= currentTime&&currentTime < 22) {
-					document.write("<link rel='stylesheet' href='css/home/evening/style.css' type='text/css'>");
-				}
-				if (22 <= currentTime&&currentTime <= 24) {
-					document.write("<link rel='stylesheet' href='css/home/night/style.css' type='text/css'>");
-				}
+			window.onload(getBackground())
+			function getBackground() {
+				var backs = ["img/d/1.jpg", "img/d/2.jpg", "img/d/3.jpg", "img/d/4.jpg", "img/e/1.jpg", "img/e/2.jpg", "img/e/3.jpg", "img/n/1.jpg", "img/n/2.jpg", "img/n/3.jpg"]
+				var curBack = backs[Math.floor(Math.random() * backs.length)];
+				document.write("<link rel='stylesheet' href='css/home/darkb.css' type='text/css'>")
+				document.write('<style> body {background-image: url("'+ curBack + '")} </style>')
 			}
     </script>
 	</head>
@@ -57,7 +45,7 @@
       function search() {
         var se = document.getElementById("se").value;
         var query = encodeURIComponent(document.getElementById("search").value);
-	document.getElementById("load").style.display = "block"
+		document.getElementById("load").style.display = "block"
         if (se === "ddg") {var search = "https://www.duckduckgo.com/?q=" + query}
         if (se === "google") {var search = "https://www.google.com/search?q=" + query}
         if (se === "yahoo") {var search = "https://search.yahoo.com/search?p=" + query}
