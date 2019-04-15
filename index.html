@@ -5,11 +5,11 @@
 		<title>SimpleSearch | The best homepage... ever!</title>
 		<link rel="shortcut icon" href="https://raw.githubusercontent.com/n0rmancodes/simplesearch/master/img/favicon.ico">
 		<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 		
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 		<script>
 			window.onload(getBackground())
 			function getBackground() {
-				var backs = ["img/d/1.jpg", "img/d/2.jpg", "img/e/1.jpg", "img/e/2.jpg"]
+				var backs = ["img/1.jpg", "img/2.jpg", "img/3.jpg", "img/4.jpg"]
 				var curBack = backs[Math.floor(Math.random() * backs.length)];
 				document.write("<link rel='stylesheet' href='css/home/darkb.css' type='text/css'>")
 				document.write('<style> body {background-image: url("'+ curBack + '")} </style>')
@@ -21,7 +21,7 @@
 		<h1>simplesearch</h1>
 		<h2 id="welcome" style="display: block;"></h2>
 		<p id="datetime" style="display: block;"></p>
-		<p id="footer" style="font-size:10px;">see the background <a style="font-size:10px; text-decoration:underline;" onclick="hideeverything()">by itself!</a> | <a style="font-size:10px; text-decoration:underline;" onclick="genforecast(); document.getElementById('weather').style.display = 'block';">weather</a> | <a style="font-size:10px;" href="https://github.com/n0rmancodes/simplesearch">github repo</a></p>
+		<p id="footer" style="font-size:10px;">see the background <a style="font-size:10px; text-decoration:underline;" onclick="hideeverything()">by itself!</a> | <a style="font-size:10px; text-decoration:underline;" onclick="genforecast(); document.getElementById('weather').style.display = 'block';">weather</a> | <a style="font-size:10px;" href="https://github.com/n0rmancodes/simplesearch">github repo</a> | <a style="font-size:10px;" href="/disclaimer">disclaimer/photo credit</a></p>
 		<input id="search" autocomplete="off" placeholder="search now" maxlength="100" title="change your search engine with the box on the side."><select id="se"><option value="ddg" selected="selected">duckduckgo</option><option value="google">google</option><option value="yahoo">yahoo!</option><option value="bing">bing</option><option value="dp">dogpile</option></select><button onclick="search()">search</button>
 		<div style="display:none;" id="load"><img src="img/ajax-loader.gif"></div>
 		<div id="weather" style="background-color:white; width: 675px; height: 250px; display:none;"></div>
