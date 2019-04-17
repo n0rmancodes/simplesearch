@@ -32,7 +32,7 @@
 			}
 		</style>
 	</head>
-  <body>
+  <body id=body>
     <center><div id="header" style="background-color:black; width:30%; height: 275px;">
 		<h1>simplesearch</h1>
 		<h2 id="welcome" style="display: block;"></h2>
@@ -44,16 +44,25 @@
 	<center>
 	<div id="weather" style="background-color:white; width: 675px; height: 250px; display:none;"></div>
 	<div id="ajaxloader" style=display:none;></div>
+	<div id="pageinfo" style="display:none; background-color: black; width:30%">
+		<h2>welcome to page info</h2>
+		<p>last update: 04/16/19 @ 08:18 PM<br>last thing done: adding this secret menu<br>next thing to do: easter eggs, saving your search engine, and more!</p>
+		<button onclick=document.getElementById("pageinfo").style.display="none">hide this</button>
+	</div>
 	</center>
     <script>
       var s = document.getElementById("search");
+	  var b = document.getElementById("body");
       s.addEventListener("keydown", function (e) {
         if (e.keyCode == 13) {
           search()
         } 
       });
-      if (new Date().getSeconds === 00)
-      {gendate()}
+	 b.addEventListener("keydown", function (e) {
+        if (e.keyCode == 106) {
+          document.getElementById("pageinfo").style.display = "block"
+        } 
+      });
       var w = document.getElementById("weather")
       window.onload(onloadall())
       function onloadall() {
@@ -87,13 +96,12 @@
         var minute = d.getMinutes();
         minute = minute < 10 ? '0'+minute : minute;
         hour = hour < 10 ? '0'+hour : hour;
-	day = day < 10 ? '0'+day : day;
+	    day = day < 10 ? '0'+day : day;
         m = m < 10 ? '0'+m : m;
         var curdat = "today's date is " + m + "/" + day + "/" + year + " and it is " + hour + ":" + minute + "! i hope you're having a good day!"
         document.getElementById("datetime").innerHTML = curdat;
       }
-      function genforecast() 
-      {
+      function genforecast() {
         navigator.geolocation.getCurrentPosition(function(location) {
           var x = document.getElementById("weather")
           var latitude = location.coords.latitude
