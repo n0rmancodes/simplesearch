@@ -32,83 +32,24 @@
 			}
 		</style>
 	</head>
-  <body id=body>
-    <center><div id="header" style="background-color:black; width:30%; height: 275px;">
-		<h1>simplesearch</h1>
-		<h2 id="welcome" style="display: block;"></h2>
-		<p id="datetime" style="display: block;"></p>
-		<p id="footer" style="font-size:10px;"><a style="font-size:10px; text-decoration:underline;" onclick="genforecast(); document.getElementById('weather').style.display = 'block';">weather</a> | <a style="font-size:10px;" href="https://github.com/n0rmancodes/simplesearch">github repo</a> | <a style="font-size:10px;" href="/simplesearch/disclaimer">disclaimer/photo credit</a> | <a style="font-size:10px;" href="https://forms.gle/hugmZznYPc8SfP7eA">suggest wallpapers</a></p>
-		<input id="search" autocomplete="off" placeholder="search now" maxlength="100" title="change your search engine with the box on the side."><select id="se"><option value="ddg" selected="selected">duckduckgo</option><option value="google">google</option><option value="yahoo">yahoo!</option><option value="bing">bing</option><option value="dp">dogpile</option></select><button onclick="search()">search</button>
-    </center></div>
-	<div id=spacer style="height:5px;"></div>
-	<center>
-	<div id="weather" style="background-color:white; width: 675px; height: 250px; display:none;"></div>
-	<div id="ajaxloader" style=display:none;></div>
-	<div id="pageinfo" style="display:none; background-color: black; width:30%">
-		<h2>welcome to page info</h2>
-		<p>last update: 04/16/19 @ 08:18 PM<br>last thing done: adding this secret menu<br>next thing to do: easter eggs, saving your search engine, and more!</p>
-		<button onclick=document.getElementById("pageinfo").style.display="none">hide this</button>
-	</div>
-	</center>
-    <script>
-      var s = document.getElementById("search");
-	  var b = document.getElementById("body");
-      s.addEventListener("keydown", function (e) {
-        if (e.keyCode == 13) {
-          search()
-        } 
-      });
-	 b.addEventListener("keydown", function (e) {
-        if (e.keyCode == 106) {
-          document.getElementById("pageinfo").style.display = "block"
-        } 
-      });
-      var w = document.getElementById("weather")
-      window.onload(onloadall())
-      function onloadall() {
-        s.focus();
-		genwel();
-        gendate();
-      }
-      function search() {
-        var se = document.getElementById("se").value;
-        var query = encodeURIComponent(document.getElementById("search").value);
-		document.getElementById("ajaxloader").style.display = "block"
-		document.getElementById("weather").style.display = "none"
-        if (se === "ddg") {var search = "https://www.duckduckgo.com/?q=" + query}
-        if (se === "google") {var search = "https://www.google.com/search?q=" + query}
-        if (se === "yahoo") {var search = "https://search.yahoo.com/search?p=" + query}
-        if (se === "dp") {var search = "https://results.dogpile.com/search/web?q=" + query}
-        if (se === "bing") {var search = "https://www.bing.com/search?q=" + query}
-        window.open(search, "_self");
-      }
-      function genwel() {
-        var wel = ["what's up?", "i hope your day is well.", "smile!", "start seaching.", "relax.", "enjoy what you have.", "always stay humble and kind!", "yes, we're open.", "fun fact: cats can feel their death coming", "love yourself.", "be positive.", "how's the weather out there?"];
-        var weltxt = wel[Math.floor(Math.random() * wel.length)];
-        document.getElementById("welcome").innerHTML = weltxt;
-      }
-      function gendate() {
-        var d = new Date();
-        var m = d.getMonth() + 1;
-        var day = d.getDate();
-        var year = d.getFullYear();
-        var hour = d.getHours();
-        var minute = d.getMinutes();
-        minute = minute < 10 ? '0'+minute : minute;
-        hour = hour < 10 ? '0'+hour : hour;
-	    day = day < 10 ? '0'+day : day;
-        m = m < 10 ? '0'+m : m;
-        var curdat = "today's date is " + m + "/" + day + "/" + year + " and it is " + hour + ":" + minute + "! i hope you're having a good day!"
-        document.getElementById("datetime").innerHTML = curdat;
-      }
-      function genforecast() {
-        navigator.geolocation.getCurrentPosition(function(location) {
-          var x = document.getElementById("weather")
-          var latitude = location.coords.latitude
-          var longitude = location.coords.longitude
-          var embed = '<iframe id="forecast_embed" frameborder="0" height="245" width="650" src="//forecast.io/embed/#lat=' + latitude + '&lon=' + longitude + '&name=Your Location"></iframe><center>'
-          x.innerHTML = embed;
-        });
-      }
-    </script>
-</body></html>
+	<body id=body>
+		<center><div id="header" style="background-color:black; width:30%; height: 275px;">
+			<h1>simplesearch</h1>
+			<h2 id="welcome" style="display: block;"></h2>
+			<p id="datetime" style="display: block;"></p>
+			<p id="footer" style="font-size:10px;"><a style="font-size:10px; text-decoration:underline;" onclick="genforecast(); document.getElementById('weather').style.display = 'block';">weather</a> | <a style="font-size:10px;" href="https://github.com/n0rmancodes/simplesearch">github repo</a> | <a style="font-size:10px;" href="/simplesearch/disclaimer">disclaimer/photo credit</a> | <a style="font-size:10px;" href="https://forms.gle/hugmZznYPc8SfP7eA">suggest wallpapers</a></p>
+			<input id="search" autocomplete="off" placeholder="search now" maxlength="100" title="change your search engine with the box on the side."><select id="se"><option value="ddg" selected="selected">duckduckgo</option><option value="google">google</option><option value="yahoo">yahoo!</option><option value="bing">bing</option><option value="dp">dogpile</option></select><button onclick="search()">search</button>
+		</center></div>
+		<div id=spacer style="height:5px;"></div>
+			<center>
+				<div id="weather" style="background-color:white; width: 675px; height: 250px; display:none;"></div>
+				<div id="ajaxloader" style=display:none;></div>
+				<div id="pageinfo" style="display:none; background-color: black; width:30%">
+					<h2>welcome to page info</h2>
+					<p>last update: 04/16/19 @ 08:18 PM<br>last thing done: adding this secret menu<br>next thing to do: easter eggs, saving your search engine, and more!</p>
+					<button onclick=document.getElementById("pageinfo").style.display="none">hide this</button>
+				</div>
+			</center>
+		<script src="js/mainstuff.js"></script>
+	</body>
+</html>
