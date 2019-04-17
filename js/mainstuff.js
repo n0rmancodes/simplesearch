@@ -22,6 +22,7 @@
         var query = encodeURIComponent(document.getElementById("search").value);
 		document.getElementById("ajaxloader").style.display = "block"
 		document.getElementById("weather").style.display = "none"
+		document.getElementById("pageinfo").style.display = "none"
         if (se === "ddg") {var search = "https://www.duckduckgo.com/?q=" + query}
         if (se === "google") {var search = "https://www.google.com/search?q=" + query}
         if (se === "yahoo") {var search = "https://search.yahoo.com/search?p=" + query}
