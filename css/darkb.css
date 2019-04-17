@@ -1,19 +1,19 @@
 h1 {
   font-family: Ubuntu;
   font-size: 72px;
-  color: black;
+  color: white;
 }
 
 h2 {
   font-family: Roboto;
   font-size: 24px;
-  color: black;
+  color: white;
 }
 
 input {
   width: 300px;
   height: 30px;
-  color: black;
+  color: white;
   font-family: Roboto;
   text-transform: lowercase;
 }
@@ -27,7 +27,7 @@ select {
 }
 
 p {
-  color: black;
+  color: white;
   font-family: Verdana;
   font-size: 14px
 }
