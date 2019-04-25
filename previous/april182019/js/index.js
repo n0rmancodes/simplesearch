@@ -30,14 +30,6 @@
         if (se === "bing") {var search = "https://www.bing.com/search?q=" + query}
         window.open(search, "_self");
       }
-	  function ifl() {
-		document.getElementById("ajaxloader").style.display = "block"
-		document.getElementById("weather").style.display = "none"
-		document.getElementById("pageinfo").style.display = "none"
-		var query = encodeURIComponent(document.getElementById("search").value);
-		var url = "http://www.google.com/search?q=" + query + "&btnI";
-		window.open(url, "_self");
-	  }
       function genwel() {
         var wel = ["what's up?", "i hope your day is well.", "smile!", "start seaching.", "relax.", "enjoy what you have.", "always stay humble and kind!", "yes, we're open.", 'fun fact: mcdonalds calls frequent buyers of their food "heavy users"', "love yourself.", "be positive.", "how's the weather out there?", "you can press F4 for a cool lil secret!", "the largest recorded snowflake was in montana. it was 15 inches wide"];
         var weltxt = wel[Math.floor(Math.random() * wel.length)];

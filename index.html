@@ -9,10 +9,15 @@
 		<script>
 			window.onload(getBackground())
 			function getBackground() {
-				var backs = ["img/1.jpg", "img/2.jpg", "img/3.jpg", "img/4.jpg"]
+				var backs = ["img/1.jpg", "img/2.jpg", "img/3.jpg", "img/4.jpg"];
 				var curBack = backs[Math.floor(Math.random() * backs.length)];
-				document.write("<link rel='stylesheet' href='css/darkb.css' type='text/css'>")
-				document.write('<style> body {background-image: url("'+ curBack + '")} </style>')
+				document.write("<link rel='stylesheet' href='css/darkb.css' type='text/css'>");
+				document.write('<style> body {background-image: url("'+ curBack + '")} </style>');
+				if (curBack === "img/1.jpg") {var credit = "StockSnap from Pixabay"};
+				if (curBack === "img/2.jpg") {var credit = "Micha Sager from Pixabay"};
+				if (curBack === "img/3.jpg") {var credit = "David Mark from Pixabay"};
+				if (curBack === "img/4.jpg") {var credit = "Bessi from Pixabay"};
+				document.getElementById("pc").innerHTML = credit;
 			}
 		</script>
 		<style>
@@ -33,12 +38,12 @@
 		</style>
 	</head>
 	<body id=body>
-		<center><div id="header" style="background-color:black; width:30%; height: 12%;">
+		<center><div id="header" style="background-color:black; width:31%; height: 15%;">
 			<h1>simplesearch</h1>
 			<h2 id="welcome" style="display: block;"></h2>
 			<p id="datetime" style="display: block;"></p>
-			<p id="footer" style="font-size:10px;"><a style="font-size:10px; text-decoration:underline;" onclick="genforecast(); document.getElementById('weather').style.display = 'block';">weather</a> | <a style="font-size:10px;" href="https://github.com/n0rmancodes/simplesearch">github repo</a> | <a style="font-size:10px;" href="/simplesearch/disclaimer">disclaimer/photo credit</a> | <a style="font-size:10px;" href="https://forms.gle/hugmZznYPc8SfP7eA">suggest wallpapers</a></p>
-			<input id="search" autocomplete="off" placeholder="search now" maxlength="100" title="change your search engine with the box on the side."><select id="se"><option value="ddg" selected="selected">duckduckgo</option><option value="google">google</option><option value="yahoo">yahoo!</option><option value="bing">bing</option><option value="dp">dogpile</option></select><button onclick="search()">search</button>
+			<p id="footer" style="font-size:10px;"><a style="font-size:10px; text-decoration:underline;" onclick="genforecast(); document.getElementById('weather').style.display = 'block';">weather</a> | <a style="font-size:10px;" href="https://github.com/n0rmancodes/simplesearch">github repo</a> | <a style="font-size:10px;" href="disclaimer">disclaimer and photo credit</a> | <a style="font-size:10px;" href="/simplesearch/previous">previous version</a>| <a style="font-size:10px;" href="https://forms.gle/hugmZznYPc8SfP7eA">suggest wallpapers</a></p>
+			<input id="search" autocomplete="off" placeholder="search now" maxlength="100" title="change your search engine with the box on the side."><select id="se"><option value="ddg" selected="selected">duckduckgo</option><option value="google">google</option><option value="yahoo">yahoo!</option><option value="bing">bing</option><option value="dp">dogpile</option></select><button onclick="search()">search</button><button onclick=ifl()>i'm feeling lucky</button>
 		</center></div>
 		<div id=spacer style="height:5px;"></div>
 			<center>
@@ -46,7 +51,7 @@
 				<div id="ajaxloader" style=display:none;></div>
 				<div id="pageinfo" style="display:none; background-color: black; width:30%">
 					<h2>welcome to page info</h2>
-					<p>last update: 04/18/19 @ 3:13PM<br>last thing done: fixing design a bit<br>next thing to do: easter eggs, saving your search engine, and more!</p>
+					<p>last update: 04/24/19 @ 10:39PM<br>last thing done: adding i'm feeling lucky and some other small touch-ups<br>next thing to do: easter eggs, saving your search engine, and more!<br></p>
 					<button onclick=document.getElementById("pageinfo").style.display="none">hide this</button>
 				</div>
 			</center>

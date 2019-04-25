@@ -1,0 +1,50 @@
+h1 {
+  font-family: Ubuntu;
+  font-size: 72px;
+  color: white;
+}
+
+h2 {
+  font-family: Roboto;
+  font-size: 24px;
+  color: white;
+}
+
+input {
+  width: 300px;
+  height: 30px;
+  color: white;
+  font-family: Roboto;
+}
+
+button {
+  height: 35px;
+}
+
+select {
+  height: 35px; 
+}
+
+p {
+  color: white;
+  font-family: Verdana;
+  font-size: 14px
+}
+
+a {
+  color: red;
+  font-family: Verdana;
+  font-size: 14px;
+}
+
+body {
+  height:100%;
+  margin:0;
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+  background-size:100% 100%;
+}
+
+#search {
+  color: black;
+}
