@@ -31,7 +31,7 @@
         if (se === "bing") {var search = "https://www.bing.com/search?q=" + query; localStorage.setItem('ss_engine', 'bing');}
 		if (se === "amzn") {var search = "https://www.amazon.com/s?k=" + query; localStorage.setItem('ss_engine', 'amzn');}
 		if (se === "ebay") {var search = "https://www.ebay.com/sch/i.html?_nkw=" + query; localStorage.setItem('ss_engine', 'ebay');}
-		if (se === "") {alert("choose a search engine")}
+		if (se === "") {alert("choose a search engine"); document.getElementById("ajaxloader").style.display = "none";}
         window.open(search, "_self");
       }
 	  function ifl() {
