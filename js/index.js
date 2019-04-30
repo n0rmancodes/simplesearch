@@ -54,7 +54,7 @@
         hour = hour < 10 ? '0'+hour : hour;
 	    day = day < 10 ? '0'+day : day;
         m = m < 10 ? '0'+m : m;
-        var curdat = "today's date is " + m + "/" + day + "/" + year + " and it is " + hour + ":" + minute + "! i hope you're having a good day!"
+        var curdat = "today's date is " + m + "/" + day + "/" + year + " and it is " + hour + ":" + minute + "!"
         document.getElementById("datetime").innerHTML = curdat;
       }
       function genforecast() {
