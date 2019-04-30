@@ -20,22 +20,6 @@
 				document.getElementById("pc").innerHTML = credit;
 			}
 		</script>
-		<style>
-			#ajaxloader {
-				width: 30px;
-				height: 30px;
-				border: 8px solid #fff;
-				border-right-color: transparent;
-				border-radius: 50%;
-				box-shadow: 0 0 25px 2px #eee;
-				animation: spin 1s linear infinite;
-			}
-			@keyframes spin {
-				from { transform: rotate(0deg);   opacity: 1.0; }
-				50%  { transform: rotate(180deg); opacity: 1.0; }
-				to   { transform: rotate(360deg); opacity: 1.0; }
-			}
-		</style>
 	</head>
 	<body id=body>
 		<center><div id="header" style="background-color:black; width:31%; height: 15%;">
@@ -43,7 +27,7 @@
 			<h2 id="welcome" style="display: block;"></h2>
 			<p id="datetime" style="display: block;"></p>
 			<p id="footer" style="font-size:10px;"><a style="font-size:10px; text-decoration:underline;" onclick="genforecast(); document.getElementById('weather').style.display = 'block';">weather</a> | <a style="font-size:10px;" href="https://github.com/n0rmancodes/simplesearch">github repo</a> | <a style="font-size:10px;" href="disclaimer">disclaimer and photo credit</a> | <a style="font-size:10px;" href="/simplesearch/previous">previous version</a> | <a style="font-size:10px;" href="https://forms.gle/hugmZznYPc8SfP7eA">suggest wallpapers</a></p>
-			<input id="search" autocomplete="off" placeholder="search now" maxlength="100" title="change your search engine with the box on the side."><select id="se"><option value="ddg" selected="selected">duckduckgo</option><option value="google">google</option><option value="yahoo">yahoo!</option><option value="bing">bing</option><option value="dp">dogpile</option></select><button onclick="search()">search</button><button onclick=ifl()>i'm feeling lucky</button>
+			<input id="search" autocomplete="off" placeholder="search now" maxlength="100" title="change your search engine with the box on the side."><select id="se" onclick="save()"><option selected value="google">google</option><option value="ddg" selected="selected">duckduckgo</option><option value="yahoo">yahoo!</option><option value="bing">bing</option><option value="dp">dogpile</option><option disabled>------</option><option value="amzn">amazon</option><option value="ebay">ebay</option></select><button onclick="search()">search</button><button onclick=ifl()>i'm feeling lucky</button>
 			<div style="height:5px;"></div>
 		</center></div>
 		<div id=spacer style="height:5px;"></div>
@@ -52,7 +36,7 @@
 				<div id="ajaxloader" style="display:none;"></div>
 				<div id="pageinfo" style="display:none; background-color: black; width:30%">
 					<h2>welcome to page info</h2>
-					<p>last update: 04/28/19 @ 09:26PM<br>last thing done: small fix-up to the page that was bugging me<br>next thing to do: easter eggs, saving your search engine, and more!<br></p>
+					<p>last update: 04/30/19 @ 05:08PM<br>last thing done: finally saves your search engine, and a bit more organizing!<br>next thing to do: easter eggs & more!<br></p>
 					<button onclick='document.getElementById("pageinfo").style.display="none"'>hide this</button>
 				</div>
 			</center>

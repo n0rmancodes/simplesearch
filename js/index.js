@@ -16,6 +16,7 @@
         s.focus();
 		genwel();
         gendate();
+		document.getElementById("se").value = localStorage.getItem('ss_engine')
       }
       function search() {
         var se = document.getElementById("se").value;
@@ -23,17 +24,20 @@
 		document.getElementById("ajaxloader").style.display = "block"
 		document.getElementById("weather").style.display = "none"
 		document.getElementById("pageinfo").style.display = "none"
-        if (se === "ddg") {var search = "https://www.duckduckgo.com/?q=" + query}
-        if (se === "google") {var search = "https://www.google.com/search?q=" + query}
-        if (se === "yahoo") {var search = "https://search.yahoo.com/search?p=" + query}
-        if (se === "dp") {var search = "https://results.dogpile.com/search/web?q=" + query}
-        if (se === "bing") {var search = "https://www.bing.com/search?q=" + query}
+        if (se === "ddg") {var search = "https://www.duckduckgo.com/?q=" + query; localStorage.setItem('ss_engine', 'ddg');}
+        if (se === "google") {var search = "https://www.google.com/search?q=" + query; localStorage.setItem('ss_engine', 'google');}
+        if (se === "yahoo") {var search = "https://search.yahoo.com/search?p=" + query; localStorage.setItem('ss_engine', 'yahoo');}
+        if (se === "dp") {var search = "https://results.dogpile.com/search/web?q=" + query; localStorage.setItem('ss_engine', 'dp');}
+        if (se === "bing") {var search = "https://www.bing.com/search?q=" + query; localStorage.setItem('ss_engine', 'bing');}
+		if (se === "amzn") {var search = "https://www.amazon.com/s?k=" + query; localStorage.setItem('ss_engine', 'amzn');}
+		if (se === "ebay") {var search = "https://www.ebay.com/sch/i.html?_nkw=" + query; localStorage.setItem('ss_engine', 'ebay');}
+		if (se === "") {alert("choose a search engine")}
         window.open(search, "_self");
       }
 	  function ifl() {
-		document.getElementById("ajaxloader").style.display = "block"
-		document.getElementById("weather").style.display = "none"
-		document.getElementById("pageinfo").style.display = "none"
+		document.getElementById("ajaxloader").style.display = "block";
+		document.getElementById("weather").style.display = "none";
+		document.getElementById("pageinfo").style.display = "none";
 		var query = encodeURIComponent(document.getElementById("search").value);
 		var url = "http://www.google.com/search?q=" + query + "&btnI";
 		window.open(url, "_self");
