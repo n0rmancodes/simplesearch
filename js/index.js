@@ -71,11 +71,3 @@
           x.innerHTML = embed;
         });
       }
-     function cookiewarning() {
-	if (localStorage.getItem('ss_cookies') === "1") {break;}
-	if (localStorage.getItem('ss_cookies') === "") {document.getElementById("cookiealert").style.display = "block";}
-     }
-     function cookieclose() {     
-	localStorage.setItem('ss_cookies') = "1"
-	document.getElementById('cookiealert').style.display = 'none'
-     }
