@@ -77,7 +77,6 @@
 		document.getElementById("pageinfo").style.display = 'none';
 	  }
 	  function reset_settings() {
-		alert("are you sure? click OK to continue, if otherwise refresh the page.");
 		localStorage.setItem('ss_engine', '')
 		alert("reset completely. the page will now refresh")
 		window.open(window.location.href, "_self")
