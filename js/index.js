@@ -16,6 +16,7 @@
         s.focus();
 		genwel();
         gendate();
+		settingscheck();
 		document.getElementById("se").value = localStorage.getItem('ss_engine');
       }
       function search() {
@@ -81,4 +82,18 @@
 		localStorage.setItem('ss_engine', '')
 		alert("reset completely. the page will now refresh")
 		window.open(window.location.href, "_self")
+	  }
+	  function settingscheck() {
+		if (localStorage.getItem('ss_s1') === "n") {document.getElementById("datetime").style.display = 'none'; document.getElementById('setting1').value = 'n';}
+		if (localStorage.getItem('ss_s1') === "y") {document.getElementById("datetime").style.display = 'block'; document.getElementById('setting1').value = 'y';}	
+		if (localStorage.getItem('ss_s2') === "n") {document.getElementById("welcome").style.display = 'none'; document.getElementById('setting2').value = 'n';}
+		if (localStorage.getItem('ss_s2') === "y") {document.getElementById("welcome").style.display = 'block'; document.getElementById('setting2').value = 'y';}	
+	  }
+	  function savesettings() {
+		if (document.getElementById('setting1').value === "n") {localStorage.setItem("ss_s1", "n")}
+		if (document.getElementById('setting1').value === "y") {localStorage.setItem("ss_s1", "y")}
+		if (document.getElementById('setting2').value === "n") {localStorage.setItem("ss_s2", "n")}
+		if (document.getElementById('setting2').value === "y") {localStorage.setItem("ss_s2", "y")}
+		document.getElementById('settings').style.display = 'none';
+		settingscheck()
 	  }

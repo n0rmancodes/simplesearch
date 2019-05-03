@@ -63,3 +63,9 @@ body {
 	50%  { transform: rotate(180deg); opacity: 1.0; }
 	to   { transform: rotate(360deg); opacity: 1.0; }
 }
+
+label {
+	font-family: Roboto;
+	font-size: 14px;
+	color: white;
+}

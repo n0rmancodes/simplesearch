@@ -36,12 +36,17 @@
 				<div id="ajaxloader" style="display:none;"></div>
 				<div id="pageinfo" style="display:none; background-color: black; width:30%">
 					<h2>welcome to page info</h2>
-					<p>last update: 04/30/19 @ 05:08PM<br>last thing done: finally saves your search engine, and a bit more organizing!<br>next thing to do: easter eggs & more!<br></p>
+					<p>last update: 04/30/19 @ 05:08PM<br>last thing done: settings<br>next thing to do: easter eggs & more!<br></p>
 					<button onclick='document.getElementById("pageinfo").style.display="none"'>close</button>
 				</div>
 				<div id=more style="display:none; background-color:black; width:200px;">
-					<p><a href=previous>all previous versions</a><br><a href="https://forms.gle/hugmZznYPc8SfP7eA">suggest wallpapers</a><br><a href="https://www.paypal.me/therealnorman">support me</a><br><a style="text-decoration:underline;" onclick="reset_settings()">reset all saved settings</a></p>
+					<p><a href=previous>all previous versions</a><br><a href="https://forms.gle/hugmZznYPc8SfP7eA">suggest wallpapers</a><br><a href="https://www.paypal.me/therealnorman">support me</a><br><a onclick="document.getElementById('settings').style.display='block';document.getElementById('more').style.display='none'" style="text-decoration:underline;">settings</a><br><a style="text-decoration:underline;" onclick="reset_settings()">reset all saved settings</a></p>
 					<button onclick="document.getElementById('more').style.display='none'">close</button>
+				</div>
+				<div id=settings style="display:none; background-color:black; width:300px;">
+					<label>display date and time:</label><select id=setting1><option value=y>yes</option><option value=n>no</option></select><br>
+					<label>display greetings:</label><select id=setting2><option value=y>yes</option><option value=n>no</option></select><br>
+					<button onclick=savesettings()>save</button>
 				</div>
 			</center>
 		<script src="js/index.js"></script>
