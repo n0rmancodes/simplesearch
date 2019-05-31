@@ -6,27 +6,14 @@
 		<link rel="shortcut icon" href="https://raw.githubusercontent.com/n0rmancodes/simplesearch/master/img/favicon.ico">
 		<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-		<script>
-			window.onload(getBackground())
-			function getBackground() {
-				var backs = ["img/1.jpg", "img/2.jpg", "img/3.jpg", "img/4.jpg"];
-				var curBack = backs[Math.floor(Math.random() * backs.length)];
-				document.write("<link rel='stylesheet' href='css/darkb.css' type='text/css'>");
-				document.write('<style> body {background-image: url("'+ curBack + '")} </style>');
-				if (curBack === "img/1.jpg") {var credit = "StockSnap from Pixabay"};
-				if (curBack === "img/2.jpg") {var credit = "Micha Sager from Pixabay"};
-				if (curBack === "img/3.jpg") {var credit = "David Mark from Pixabay"};
-				if (curBack === "img/4.jpg") {var credit = "Bessi from Pixabay"};
-				document.getElementById("pc").innerHTML = credit;
-			}
-		</script>
+		<script src="js/head/index.js"></script>
 	</head>
 	<body id=body>
 		<center><div id="header" style="background-color:black; width:31%; height: 15%;">
 			<h1>simplesearch</h1>
 			<h2 id="welcome" style="display: block;"></h2>
 			<p id="datetime" style="display: block;"></p>
-			<p id="footer" style="font-size:10px;"><a style="font-size:10px; text-decoration:underline;" onclick="genforecast(); document.getElementById('weather').style.display = 'block';">weather</a> | <a style="font-size:10px;" href="https://github.com/n0rmancodes/simplesearch">github repo</a> | <a style="font-size:10px;" href="disclaimer">disclaimer and photo credit</a> | <a style="font-size:10px; text-decoration:underline;" onclick="more()">more options</a></p>
+			<p id="footer" style="font-size:10px;"><a style="font-size:10px; text-decoration:underline;" onclick="genforecast(); document.getElementById('weather').style.display = 'block';">weather</a> | <a style="font-size:10px;" href="https://github.com/n0rmancodes/simplesearch">github repo</a> | <a style="font-size:10px;" href="disclaimer">disclaimer</a> | <a style="font-size:10px; text-decoration:underline;" onclick="more()">more options</a></p>
 			<input id="search" autocomplete="off" placeholder="search now" maxlength="100" title="change your search engine with the box on the side."><select id="se"><option selected value="google">google</option><option value="ddg" selected="selected">duckduckgo</option><option value="yahoo">yahoo!</option><option value="bing">bing</option><option value="dp">dogpile</option><option disabled>------</option><option value="amzn">amazon</option><option value="ebay">ebay</option></select><button onclick="search()">search</button><button onclick=ifl()>i'm feeling lucky</button>
 			<div style="height:5px;"></div>
 		</center></div>
@@ -44,8 +31,9 @@
 					<button onclick="document.getElementById('more').style.display='none'">close</button>
 				</div>
 				<div id=settings style="display:none; background-color:black; width:300px;">
-					<label>display date and time:</label><select id=setting1><option value=y>yes</option><option value=n>no</option></select><br>
-					<label>display greetings:</label><select id=setting2><option value=y>yes</option><option value=n>no</option></select><br>
+					<label>display date and time:</label><select id="setting1"><option value=y>yes (default)</option><option value=n>no</option></select><br>
+					<label>display greetings:</label><select id="setting2"><option value=y>yes (default)</option><option value=n>no</option></select><br>
+					<label>display photo credit (using alert):</label><select id="setting3"><option value=n>no (default)</option><option value=y>yes</option></select>
 					<button onclick=savesettings()>save & close</button>
 				</div>
 			</center>

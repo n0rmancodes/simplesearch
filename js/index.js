@@ -65,7 +65,7 @@ window.onload(onloadall())
 		document.getElementById("datetime").innerHTML = curdat;
 	}
 	function genforecast() {
-			navigator.geolocation.getCurrentPosition(function(location) {
+		navigator.geolocation.getCurrentPosition(function(location) {
 			var x = document.getElementById("weather")
 			var latitude = location.coords.latitude
 			var longitude = location.coords.longitude
@@ -82,6 +82,7 @@ window.onload(onloadall())
 		localStorage.setItem('ss_engine', '');
 		localStorage.setItem('ss_s1', '');
 		localStorage.setItem('ss_s2', '');
+		localStorage.setItem("ss_s3", "");
 		alert("reset completely. the page will now refresh");
 		window.open(window.location.href, "_self");
 	}
@@ -89,13 +90,17 @@ window.onload(onloadall())
 		if (localStorage.getItem('ss_s1') === "n") {document.getElementById("datetime").style.display = 'none'; document.getElementById('setting1').value = 'n';}
 		if (localStorage.getItem('ss_s1') === "y") {document.getElementById("datetime").style.display = 'block'; document.getElementById('setting1').value = 'y';}	
 		if (localStorage.getItem('ss_s2') === "n") {document.getElementById("welcome").style.display = 'none'; document.getElementById('setting2').value = 'n';}
-		if (localStorage.getItem('ss_s2') === "y") {document.getElementById("welcome").style.display = 'block'; document.getElementById('setting2').value = 'y';}	
+		if (localStorage.getItem('ss_s2') === "y") {document.getElementById("welcome").style.display = 'block'; document.getElementById('setting2').value = 'y';}
+		if (localStorage.getItem('ss_s3') === "n") {document.getElementById('setting3').value = "n";}
+		if (localStorage.getItem('ss_s3') === "y") {document.getElementById('setting3').value = "y";}
 	}
 	function savesettings() {
-		if (document.getElementById('setting1').value === "n") {localStorage.setItem("ss_s1", "n")}
-		if (document.getElementById('setting1').value === "y") {localStorage.setItem("ss_s1", "y")}
-		if (document.getElementById('setting2').value === "n") {localStorage.setItem("ss_s2", "n")}
-		if (document.getElementById('setting2').value === "y") {localStorage.setItem("ss_s2", "y")}
+		if (document.getElementById('setting1').value === "n") {localStorage.setItem("ss_s1", "n")};
+		if (document.getElementById('setting1').value === "y") {localStorage.setItem("ss_s1", "y")};
+		if (document.getElementById('setting2').value === "n") {localStorage.setItem("ss_s2", "n")};
+		if (document.getElementById('setting2').value === "y") {localStorage.setItem("ss_s2", "y")};
+		if (document.getElementById('setting3').value === "n") {localStorage.setItem("ss_s3", "n")};
+		if (document.getElementById('setting3').value === "y") {localStorage.setItem("ss_s3", "y")};
 		document.getElementById('settings').style.display = 'none';
-		settingscheck()
+		settingscheck();
 	}
