@@ -69,14 +69,19 @@ window.onload(onloadall())
 		document.getElementById("datetime").innerHTML = curdat;
 	}
 	function genforecast() {
+		document.getElementById("weather").innerHTML = "<div id='ajaxloader_dark'></div><p style='color:black;'>please allow location settings in order for this widget to work.</p>"
+		document.getElementById("weather").style.display = "block"
+		document.getElementById("pageinfo").style.display = "none";
+		document.getElementById("settings").style.display = "none";
+		document.getElementById("more").style.display = "none";
 		navigator.geolocation.getCurrentPosition(function(location) {
+			document.getElementById("weather").innerHTML = "<div id='ajaxloader_dark'></div><p style='color:black;'>loading site...</p>"
 			var x = document.getElementById("weather")
 			var latitude = location.coords.latitude
 			var longitude = location.coords.longitude
-			var embed = '<iframe id="forecast_embed" frameborder="0" height="245" width="650" src="//forecast.io/embed/#lat=' + latitude + '&lon=' + longitude + '&name=Your Location"></iframe><center>'
+			var embed = '<iframe id="forecast_embed" frameborder="0" height="245" width="650" src="https://forecast.io/embed/#lat=' + latitude + '&lon=' + longitude + '&name=Your Location"></iframe><center>'
 			x.innerHTML = embed;
-		});
-	}
+	})};
 	function more() {
 		document.getElementById("more").style.display = 'block';
 		document.getElementById("weather").style.display = 'none';
