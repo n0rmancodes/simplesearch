@@ -26,14 +26,18 @@ window.onload(onloadall())
 		document.getElementById("ajaxloader").style.display = "block";
 		document.getElementById("weather").style.display = "none";
 		document.getElementById("pageinfo").style.display = "none";
+		document.getElementById("settings").style.display = "none";
 		document.getElementById("more").style.display = "none";
 		if (se === "ddg") {var search = "https://www.duckduckgo.com/?q=" + query; localStorage.setItem('ss_engine', 'ddg');}
 		if (se === "google") {var search = "https://www.google.com/search?q=" + query; localStorage.setItem('ss_engine', 'google');}
 		if (se === "yahoo") {var search = "https://search.yahoo.com/search?p=" + query; localStorage.setItem('ss_engine', 'yahoo');}
 		if (se === "dp") {var search = "https://results.dogpile.com/search/web?q=" + query; localStorage.setItem('ss_engine', 'dp');}
 		if (se === "bing") {var search = "https://www.bing.com/search?q=" + query; localStorage.setItem('ss_engine', 'bing');}
-		if (se === "amzn") {var search = "https://www.amazon.com/s?k=" + query; localStorage.setItem('ss_engine', 'amzn');}
-		if (se === "ebay") {var search = "https://www.ebay.com/sch/i.html?_nkw=" + query; localStorage.setItem('ss_engine', 'ebay');}
+		if (se === "ask") {var search = "https://www.ask.com/web?q=" + query; localStorage.setItem('ss_engine', 'ask');}
+		if (se === "yandex") {var search = "https://yandex.com/search/?text=" + query; localStorage.setItem('ss_engine', 'yandex');}
+		if (se === "webcrawler") {var search = "http://www.webcrawler.com/serp?q=" + query; localStorage.setItem('ss_engine', 'webcrawler');}
+		if (se === "amzn") {var search = "https://www.amazon.com/s?k=" + query;}
+		if (se === "ebay") {var search = "https://www.ebay.com/sch/i.html?_nkw=" + query;}
 		if (se === "") {alert("choose a search engine"); document.getElementById("ajaxloader").style.display = "none";}
 		window.open(search, "_self");
 	}
