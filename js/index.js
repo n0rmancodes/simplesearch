@@ -69,7 +69,7 @@ window.onload(onloadall())
 		document.getElementById("datetime").innerHTML = curdat;
 	}
 	function genforecast() {
-		document.getElementById("weather").innerHTML = "<div id='ajaxloader_dark'></div><p style='color:black;'>please allow location settings in order for this widget to work.</p>"
+		document.getElementById("weather").innerHTML = "<div id='loading_txt'><div id='ajaxloader_dark'></div><p style='color:black;'>please allow location settings in order for this widget to work.<br><br>please wait...</p></div>"
 		document.getElementById("weather").style.display = "block"
 		document.getElementById("pageinfo").style.display = "none";
 		document.getElementById("settings").style.display = "none";
