@@ -14,4 +14,3 @@ function getSize() {
 	if (w < 368) {document.getElementById("title").style = "font-size:52px;"; document.getElementById("welcome").style = "font-size:20px;"; document.getElementById("header").style = "width:99%; background-color:black; height: 15%;"; document.getElementById("ifl-btn").style.display = "none";}
 	if (w < 320) {document.getElementById("title").style = "font-size:48px;"; document.getElementById("welcome").style = "font-size:20px;"; document.getElementById("header").style = "width:99%; background-color:black; height: 15%;"; document.getElementById("ifl-btn").style.display = "none";}
 }
-window.addEventListener('resize', getSize);
