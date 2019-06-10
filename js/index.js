@@ -15,7 +15,7 @@ b.addEventListener("keydown", function (e) {
 
 setInterval(function() {
   gendate()
-}, 1000);
+}, 100);
 
 onloadall()
 
@@ -77,15 +77,19 @@ function gendate() {
 	var year = d.getFullYear();		
 	var hour = d.getHours();
 	var minute = d.getMinutes();
+	var seconds = d.getSeconds();
 	minute = minute < 10 ? '0'+minute : minute;
 	hour = hour < 10 ? '0'+hour : hour;
+	seconds = seconds < 10 ? '0'+seconds : seconds;
+	day = day < 10 ? '0'+day : day;
+	m = m < 10 ? '0'+m : m;
 	if (hour < 12) {var ampm = "am"}
 	if (hour === 12) {var ampm = "pm"}
 	if (hour > 12) {var ampm = "pm"}
-	day = day < 10 ? '0'+day : day;
-	m = m < 10 ? '0'+m : m;
-	var curdat = "today's date is " + m + "/" + day + "/" + year + " and it is " + hour + ":" + minute + ampm + "!"
-	document.getElementById("datetime").innerHTML = curdat;
+	var curDatSec = "today's date is " + m + "/" + day + "/" + year + " and it is " + hour + ":" + minute + ":" + seconds + ampm + "!"
+	var curDat = "today's date is " + m + "/" + day + "/" + year + " and it is " + hour + ":" + minute + ampm + "!"
+	if (localStorage.getItem("ss_s6") === "y") {document.getElementById("datetime").innerHTML = curDatSec;} 
+	if (localStorage.getItem("ss_s6") === "n") {document.getElementById("datetime").innerHTML = curDat;} 
 }
 
 function genforecast() {
@@ -131,6 +135,8 @@ function settingscheck() {
 	if (localStorage.getItem('ss_s4') === "y") {document.getElementById('setting4').value = "y"; startRefill();}
 	if (localStorage.getItem('ss_s5') === "n") {document.getElementById('setting5').value = "n";}
 	if (localStorage.getItem('ss_s5') === "y") {document.getElementById('setting5').value = "y";}
+	if (localStorage.getItem('ss_s6') === "n") {document.getElementById('setting6').value = "n";}
+	if (localStorage.getItem('ss_s6') === "y") {document.getElementById('setting6').value = "y";}
 }
 
 function savesettings() {
@@ -144,6 +150,8 @@ function savesettings() {
 	if (document.getElementById('setting4').value === "y") {localStorage.setItem("ss_s4", "y")};
 	if (document.getElementById('setting5').value === "n") {localStorage.setItem("ss_s5", "n")};
 	if (document.getElementById('setting5').value === "y") {localStorage.setItem("ss_s5", "y")};
+	if (document.getElementById('setting6').value === "n") {localStorage.setItem("ss_s6", "n")};
+	if (document.getElementById('setting6').value === "y") {localStorage.setItem("ss_s6", "y")};
 	document.getElementById('settings').style.display = 'none';
 	settingscheck();
 }
