@@ -90,6 +90,7 @@ function gendate() {
 	var curDat = "today's date is " + m + "/" + day + "/" + year + " and it is " + hour + ":" + minute + ampm + "!"
 	if (localStorage.getItem("ss_s6") === "y") {document.getElementById("datetime").innerHTML = curDatSec;} 
 	if (localStorage.getItem("ss_s6") === "n") {document.getElementById("datetime").innerHTML = curDat;} 
+	if (!localStorage.getItem("ss_s6")) {document.getElementById("datetime").innerHTML = curdat;}
 }
 
 function genforecast() {
