@@ -15,16 +15,16 @@ b.addEventListener("keydown", function (e) {
 });
 
 setInterval(function() {
-	gendate()
+	genDate()
 }, 100);
 
 onloadall()
 
 function onloadall() {
 	s.focus();
-	genwel();
-	gendate();
-	settingscheck();
+	genWel();
+	genDate();
+	settingsCheck();
 	if (!localStorage.getItem("ss_cookie")) {disclaimer(); localStorage.setItem("ss_cookie", "obtained")}
 	document.getElementById("se").value = localStorage.getItem('ss_engine');
 	if (localStorage.getItem("ss_s5") === "y") {genforecast();}
@@ -68,13 +68,13 @@ function ifl() {
 	window.open(url, "_self");	
 }
 
-function genwel() {
+function genWel() {
 	var wel = ["what's up?", "i hope your day is well.", "smile!", "start seaching.", "relax.", "enjoy what you have.", "always stay humble and kind!", "yes, we're open.", 'fun fact: mcdonalds calls frequent buyers of their food "heavy users"', "love yourself.", "be positive.", "how's the weather out there?", "you can press F4 for a cool lil secret!", "the largest recorded snowflake was in montana. it was 15 inches wide"];
 	var weltxt = wel[Math.floor(Math.random() * wel.length)];
 	document.getElementById("welcome").innerHTML = weltxt;
 }
 
-function gendate() {
+function genDate() {
 	var d = new Date();
 	var m = d.getMonth() + 1;
 	var day = d.getDate();
@@ -135,7 +135,7 @@ function more() {
 	document.getElementById("suggestedSites").style.display = "none";
 }
 
-function reset_settings() {
+function removeCookies() {
 	localStorage.removeItem('ss_engine');
 	localStorage.removeItem('ss_s1');
 	localStorage.removeItem('ss_s2');
@@ -148,7 +148,8 @@ function reset_settings() {
 	window.open(window.location.href, "_self");
 }
 
-function settingscheck() {
+function settingsCheck() {
+	if (!localStorage.getItem("ss_s1") | !localStorage.getItem("ss_s2") | !localStorage.getItem("ss_s3") | !localStorage.getItem("ss_s4") | !localStorage.getItem("ss_s5") | !localStorage.getItem("ss_s6") | !localStorage.getItem("ss_s7") | !localStorage.getItem("ss_s8")) {defaultSettings();}
 	if (localStorage.getItem('ss_s1') === "n") {document.getElementById("datetime").style.display = 'none'; document.getElementById('setting1').value = 'n';}
 	if (localStorage.getItem('ss_s1') === "y") {document.getElementById("datetime").style.display = 'block'; document.getElementById('setting1').value = 'y';}	
 	if (localStorage.getItem('ss_s2') === "n") {document.getElementById("welcome").style.display = 'none'; document.getElementById('setting2').value = 'n';}
@@ -167,7 +168,19 @@ function settingscheck() {
 	if (localStorage.getItem('ss_s8') === "y") {document.getElementById('setting8').value = "y";}
 }
 
-function savesettings() {
+function defaultSettings() {
+	document.getElementById("setting1").value = 'y';
+	document.getElementById("setting2").value = 'y';
+	document.getElementById("setting3").value = 'n';
+	document.getElementById("setting4").value = 'n';
+	document.getElementById("setting5").value = 'n';
+	document.getElementById("setting6").value = 'n';
+	document.getElementById("setting7").value = 'n';
+	document.getElementById("setting8").value = 'y';
+	saveSettings();
+}
+
+function saveSettings() {
 	if (document.getElementById('setting1').value === "n") {localStorage.setItem("ss_s1", "n")};
 	if (document.getElementById('setting1').value === "y") {localStorage.setItem("ss_s1", "y")};
 	if (document.getElementById('setting2').value === "n") {localStorage.setItem("ss_s2", "n")};
@@ -185,7 +198,7 @@ function savesettings() {
 	if (document.getElementById('setting8').value === "n") {localStorage.setItem("ss_s8", "n")};
 	if (document.getElementById('setting8').value === "y") {localStorage.setItem("ss_s8", "y")};
 	document.getElementById('settings').style.display = 'none';
-	settingscheck();
+	settingsCheck();
 }
 
 function disclaimer() {

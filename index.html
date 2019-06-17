@@ -27,7 +27,7 @@
 					<p>last update: 06/16/19 @ 8:03PM<br>last thing done: couple of fixes and added am/pm<br>next thing to do: easter eggs, resize functions, & more!<br><br>press F4 again to close this window.</p>
 					<div style="height:2px;"></div>
 				</div>
-				<div id=more style="display:none; background-color:black; width:200px;">
+				<div id="more" style="display:none; background-color:black; width:200px;">
 					<a href="previous">all previous versions</a>
 					<div style="height:2px;"></div>
 					<a href="https://forms.gle/hugmZznYPc8SfP7eA">suggest wallpapers</a>
@@ -38,7 +38,9 @@
 					<div style="height:2px;"></div>
 					<a onclick="document.getElementById('settings').style.display='block';document.getElementById('more').style.display='none'" href="#">settings</a>
 					<div style="height:2px;"></div>
-					<a href="#" onclick="reset_settings()">reset all saved settings</a>
+					<a href="#" onclick="defaultSettings()">reset settings to defaults</a>
+					<div style="height:2px;"></div>
+					<a href="#" onclick="removeCookies()">remove all cookies</a>
 					<div style="height:5px;"></div>
 					<button onclick="document.getElementById('more').style.display='none'; if (localStorage.getItem('ss_s7') === 'y') {document.getElementById('suggestedSites').style.display = 'block';}">close</button>
 					<div style="height:2px;"></div>
@@ -82,7 +84,7 @@
 						<button onclick="mainMenu()">go back</button>
 						<div style="height:5px;"></div>
 					</div>
-					<button onclick=savesettings()>save & close</button>
+					<button onclick="saveSettings()">save & close</button>
 					<div style="height:2px;"></div>
 				</div>
 				<div id="suggestedSites" style="display:none; background-color:black; width:500px; height:70px; padding-right:10px; padding-left:10px;">
