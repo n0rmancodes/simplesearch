@@ -27,7 +27,8 @@ function onloadall() {
 	settingscheck();
 	if (!localStorage.getItem("ss_cookie")) {disclaimer(); localStorage.setItem("ss_cookie", "obtained")}
 	document.getElementById("se").value = localStorage.getItem('ss_engine');
-	if (localStorage.getItem("ss_s5") === "y") {genforecast()}
+	if (localStorage.getItem("ss_s5") === "y") {genforecast();}
+	dispSuggested()
 }
 
 function search() {
@@ -37,6 +38,7 @@ function search() {
 	document.getElementById("weather").style.display = "none";
 	document.getElementById("pageinfo").style.display = "none";	
 	document.getElementById("settings").style.display = "none";
+	document.getElementById("suggestedSites").style.display = "none";
 	document.getElementById("more").style.display = "none";
 	if (se === "ddg") {var search = "https://www.duckduckgo.com/?q=" + query; localStorage.setItem('ss_engine', 'ddg');}
 	if (se === "google") {var search = "https://www.google.com/search?q=" + query; localStorage.setItem('ss_engine', 'google');}
@@ -59,6 +61,7 @@ function ifl() {
 	document.getElementById("pageinfo").style.display = "none";	
 	document.getElementById("settings").style.display = "none";
 	document.getElementById("more").style.display = "none";
+	document.getElementById("suggestedSites").style.display = "none";
 	var query = encodeURIComponent(document.getElementById("search").value);
 	var url = "http://www.google.com/search?q=" + query + "&btnI";
 	if (localStorage.getItem('ss_s4') === "y") {localStorage.setItem("ss_prevSearch", document.getElementById("search").value)}
@@ -99,6 +102,7 @@ function genforecast() {
 	document.getElementById("weather").style.display = "block"
 	document.getElementById("pageinfo").style.display = "none";
 	document.getElementById("settings").style.display = "none";
+	document.getElementById("suggestedSites").style.display = "none";
 	document.getElementById("more").style.display = "none";
 	navigator.geolocation.getCurrentPosition(function(location) {
 		document.getElementById("weather").innerHTML = "<div id='ajaxloader_dark'></div><p style='color:black;'>loading site...</p>"
@@ -114,6 +118,7 @@ function more() {
 	document.getElementById("weather").style.display = "none";
 	document.getElementById("pageinfo").style.display = "none";
 	document.getElementById("settings").style.display = "none";
+	document.getElementById("suggestedSites").style.display = "none";
 }
 
 function reset_settings() {
@@ -142,6 +147,8 @@ function settingscheck() {
 	if (localStorage.getItem('ss_s5') === "y") {document.getElementById('setting5').value = "y";}
 	if (localStorage.getItem('ss_s6') === "n") {document.getElementById('setting6').value = "n";}
 	if (localStorage.getItem('ss_s6') === "y") {document.getElementById('setting6').value = "y";}
+	if (localStorage.getItem('ss_s7') === "n") {document.getElementById('setting7').value = "n";}
+	if (localStorage.getItem('ss_s7') === "y") {document.getElementById('setting7').value = "y";}
 }
 
 function savesettings() {
@@ -157,6 +164,8 @@ function savesettings() {
 	if (document.getElementById('setting5').value === "y") {localStorage.setItem("ss_s5", "y")};
 	if (document.getElementById('setting6').value === "n") {localStorage.setItem("ss_s6", "n")};
 	if (document.getElementById('setting6').value === "y") {localStorage.setItem("ss_s6", "y")};
+	if (document.getElementById('setting7').value === "n") {localStorage.setItem("ss_s7", "n")};
+	if (document.getElementById('setting7').value === "y") {localStorage.setItem("ss_s7", "y")};
 	document.getElementById('settings').style.display = 'none';
 	settingscheck();
 }
@@ -189,4 +198,9 @@ function mainMenu() {
 	document.getElementById('miscSettings').style.display = 'none';
 	document.getElementById('startupSettings').style.display='none'
 	document.getElementById('mainSettings').style.display = 'block';
+}
+
+function dispSuggested() {
+	if (!localStorage.getItem("ss_s7") | localStorage.getItem("ss_s7") === "n") {}
+	if (localStorage.getItem("ss_s7") === "y") {document.getElementById("suggestedSites").style.display = "block";}
 }
