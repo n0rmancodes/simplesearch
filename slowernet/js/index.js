@@ -4,7 +4,7 @@ s.addEventListener("keydown", function (e) {
         search()
     } 
 });
-window.onload(onloadall())
+onloadall()
 function onloadall() {
 	s.focus();
 	document.getElementById("se").value = localStorage.getItem('ss_engine');

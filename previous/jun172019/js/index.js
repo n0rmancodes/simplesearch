@@ -82,11 +82,6 @@ function genDate() {
 	var hour = d.getHours();
 	var minute = d.getMinutes();
 	var seconds = d.getSeconds();
-	minute = minute < 10 ? '0'+minute : minute;
-	hour = hour < 10 ? '0'+hour : hour;
-	seconds = seconds < 10 ? '0'+seconds : seconds;
-	day = day < 10 ? '0'+day : day;
-	m = m < 10 ? '0'+m : m;
 	if (hour < 12) {var ampm = "am"}
 	if (hour === 12) {var ampm = "pm"}
 	if (hour > 12) {var ampm = "pm"}
@@ -104,6 +99,16 @@ function genDate() {
 		if (hour === 22) {var hour = 10}
 		if (hour === 23) {var hour = 11}
 	}
+	minute = minute < 10 ? '0'+minute : minute;
+	hour = hour < 10 ? '0'+hour : hour;
+	seconds = seconds < 10 ? '0'+seconds : seconds;
+	day = day < 10 ? '0'+day : day;
+	m = m < 10 ? '0'+m : m;
+	if (0 > hour > 4) {var timeOfDay = "night"}
+	if (4 > hour > 12) {var timeOfDay = "morning"}
+	if (12 > hour > 17) {var timeOfDay = "day"}
+	if (17 > hour > 21) {var timeOfDay = "evening"}
+	if (21 > hour > 23) {var timeOfDay = "night"}
 	var curDatSec = "today's date is " + m + "/" + day + "/" + year + " and it is " + hour + ":" + minute + ":" + seconds + ampm + "!"
 	var curDat = "today's date is " + m + "/" + day + "/" + year + " and it is " + hour + ":" + minute + ampm + "!"
 	if (localStorage.getItem("ss_s6") === "y") {document.getElementById("datetime").innerHTML = curDatSec;} 
