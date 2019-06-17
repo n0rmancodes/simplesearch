@@ -40,7 +40,7 @@
 					<div style="height:2px;"></div>
 					<a href="#" onclick="reset_settings()">reset all saved settings</a>
 					<div style="height:5px;"></div>
-					<button onclick="document.getElementById('more').style.display='none'">close</button>
+					<button onclick="document.getElementById('more').style.display='none'; if (localStorage.getItem('ss_s7') === 'y') {document.getElementById('suggestedSites').style.display = 'block';}">close</button>
 					<div style="height:2px;"></div>
 				</div>
 				<div id=settings style="display:none; background-color:black; width:350px;">
