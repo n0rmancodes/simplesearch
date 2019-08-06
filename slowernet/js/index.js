@@ -1,14 +1,17 @@
 var s = document.getElementById("search");
+
 s.addEventListener("keydown", function (e) {
     if (e.keyCode == 13) {
         search()
     } 
 });
 onloadall()
+
 function onloadall() {
 	s.focus();
 	document.getElementById("se").value = localStorage.getItem('ss_engine');
 }
+
 function search() {
 	var se = document.getElementById("se").value;
 	var query = encodeURIComponent(document.getElementById("search").value);

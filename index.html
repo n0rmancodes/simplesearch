@@ -6,10 +6,16 @@
 		<link rel="shortcut icon" href="https://raw.githubusercontent.com/n0rmancodes/simplesearch/master/img/favicon.ico">
 		<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-		<script src="js/head/index.js"></script>
+		<script src="js/head.js"></script>
 	</head>
 	<body id=body>
-		<center><div id="header" style="background-color:black; width:31%; height: 15%;">
+		<center>
+		<div id="backLoader" style="background-color: black; width: 30%; display:none;">
+			<p style="font-family:Arial;">please wait while fonts and backgrounds load here.</p>
+			<div id="ajaxloader2"></div>
+			<p style="font-family:Arial;">if the wait is too long for you, please use <a href="slowernet">this version for those with a slow connection</a></p>
+		</div>
+		<div id="header" style="background-color:black; width:31%; height: 15%;">
 			<h1 id="title">simplesearch</h1>
 			<h2 id="welcome" style="display: block;" onclick="genWel()"></h2>
 			<p id="datetime" style="display: block;"></p>
@@ -50,6 +56,8 @@
 						<div style="height:2px;"></div>
 						<button onclick="document.getElementById('displaySettings').style.display='block'; document.getElementById('mainSettings').style.display='none';">display settings</button>
 						<div style="height:2px;"></div>
+						<button onclick="document.getElementById('newsSettings').style.display='block'; document.getElementById('mainSettings').style.display='none';">news settings</button>
+						<div style="height:2px;"></div>
 						<button onclick="document.getElementById('startupSettings').style.display='block'; document.getElementById('mainSettings').style.display='none';">startup settings</button>
 						<div style="height:2px;"></div>
 						<button onclick="document.getElementById('miscSettings').style.display='block'; document.getElementById('mainSettings').style.display='none';">misc settings</button>
@@ -79,6 +87,16 @@
 						<div style="height:5px;"></div>
 					</div>
 					<div id="startupSettings" style="display:none;">
+						<label>display news:</label><select id="setting9"><option value="n">no (default)</option><option value="y">yes</option></select>
+						<div style="height:2px;"></div>
+						<label>country of choice:</label><select id="setting10"><option value="US">US</option><option value="UK">UK</option></select>
+						<div style="height:2px;"></div>
+						<p>the source for this news is Google News and we use the <a href="https://newsapi.org">NewsAPI</a> service.</p>
+						<div style="height:2px;"></div>
+						<button onclick="mainMenu()">go back</button>
+						<div style="height:5px;"></div>
+					</div>
+					<div id="newsSettings" style="display:none;">
 						<label>start weather widget on startup:</label><select id="setting5"><option value="n">no (default)</option><option value="y">yes</option></select>
 						<div style="height:2px;"></div>
 						<button onclick="mainMenu()">go back</button>
@@ -89,12 +107,12 @@
 				</div>
 				<div id="suggestedSites" style="display:none; background-color:black; width:500px; height:70px; padding-right:10px; padding-left:10px;">
 					<div style="height:5px;"></div>
-					<p><a href="https://facebook.com">facebook</a> | <a href="https://twitter.com">twitter</a> | <a href="https://youtube.com">youtube</a> | <a href="https://amazon.com">amazon</a> | <a href="https://ebay.com">ebay</a> | <a href="https://discordapp.com">discord</a> | <a href="https://netflix.com">netflix</a> | <a href="https://hulu.com">hulu</a><br>
-					<a href="https://reddit.com">reddit</a></p>
+					<p><a href="https://facebook.com">facebook</a> | <a href="https://twitter.com">twitter</a> | <a href="https://reddit.com">reddit</a> | <a href="https://youtube.com">youtube</a> | <a href="https://amazon.com">amazon</a> | <a href="https://ebay.com">ebay</a> | <a href="https://discordapp.com">discord</a><br>
+					<a href="https://netflix.com">netflix</a> | <a href="https://hulu.com">hulu</a></p>
 					<div style="height:5px;"></div>
 				</div>
 			</center>
 		<script src="js/index.js"></script>
-		<script src="js/resize/index.js"></script>
+		<script src="js/resize.js"></script>
 	</body>
 </html>
