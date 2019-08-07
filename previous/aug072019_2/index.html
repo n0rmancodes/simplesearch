@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>SimpleSearch | The best homepage... ever!</title>
+		<link rel="shortcut icon" href="https://raw.githubusercontent.com/n0rmancodes/simplesearch/master/img/favicon.ico">
+		<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+		<link rel='stylesheet' href='css/style.css' type='text/css'>
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	</head>
+	<body id=body>
+		<div id="tippyTopSpacer" style="height:1px;"></div>
+		<center>
+			<div id="loader" style="background-color:black; width:31%; height: 15%;">
+				<div style="height:1px;"></div>
+				<p style="font-family:Arial;">if you are seeing this for more than a split second, this means your internet or your computer may be too slow. to fix this from continously loading for long periods of time, try the faster version <a href="slowernet">here</a></p>
+				<div id=ajaxloader2></div>
+				<div style="height:1px;"></div>
+			</div>
+			<div id="header" style="background-color:black; width:31%; height: 15%;">
+				<h1 id="title">simplesearch</h1>
+				<h2 id="welcome" style="display: block;" onclick="genWel()"></h2>
+				<p id="datetime" style="display: block;"></p>
+				<p id="footer" style="font-size:10px;"><a style="font-size:10px;" href="#" onclick="genforecast()">weather</a> | <a style="font-size:10px;" href="https://github.com/n0rmancodes/simplesearch">github repo</a> | <a style="font-size:10px;" onclick="disclaimer()" href="#">disclaimer</a> | photo credit: <b><span id="pC"></span></b> | <a style="font-size:10px;" href="#" onclick="more()">more options</a></p>
+				<input id="search" autocomplete="off" placeholder="search now" maxlength="100" title="change your search engine with the box on the side."><select id="se"><option selected value="google">google</option><option value="ddg" selected="selected">duckduckgo</option><option value="yahoo">yahoo!</option><option value="bing">bing</option><option value="dp">dogpile</option><option value="ask">ask</option><option value="yandex">yandex</option><option value="webcrawler">webcrawler</option><option disabled>------</option><option value="amzn">amazon</option><option value="ebay">ebay</option></select><button onclick="search()">search</button><button id="ifl-btn" onclick=ifl()>i'm feeling lucky</button>
+				<div id="alertsDiv" style="display:none;"><p id="alerts" style="font-size:12px;"></p></div>
+				<div style="height:5px;"></div>
+			</center></div>
+			<div id=spacer style="height:5px;"></div>
+		<center>
+				<div id="weather" style="background-color:white; width: 675px; height: 250px; display:none;"></div>
+				<div id="ajaxloader" style="display:none;"></div>
+				<div id="pageinfo" style="display:none; background-color: black; width:30%">
+					<h2>welcome to page info</h2>
+					<p>last update: 06/16/19 @ 8:03PM<br>last thing done: couple of fixes and added am/pm<br>next thing to do: easter eggs, resize functions, & more!<br><br>press F4 again to close this window.</p>
+					<div style="height:2px;"></div>
+				</div>
+				<div id="more" style="display:none; background-color:black; width:200px;">
+					<a href="previous">all previous versions</a>
+					<div style="height:2px;"></div>
+					<a href="https://forms.gle/hugmZznYPc8SfP7eA">suggest wallpapers</a>
+					<div style="height:2px;"></div>
+					<a href="https://www.paypal.me/therealnorman">support me</a>
+					<div style="height:2px;"></div>
+					<a href="slowernet/">slow connection mode</a>
+					<div style="height:2px;"></div>
+					<a onclick="document.getElementById('settings').style.display='block';document.getElementById('more').style.display='none'" href="#">settings</a>
+					<div style="height:2px;"></div>
+					<a href="#" onclick="defaultSettings()">reset settings to defaults</a>
+					<div style="height:2px;"></div>
+					<a href="#" onclick="removeCookies()">remove all cookies</a>
+					<div style="height:5px;"></div>
+					<button onclick="document.getElementById('more').style.display='none'; if (localStorage.getItem('ss_s7') === 'y') {document.getElementById('suggestedSites').style.display = 'block';}">close</button>
+					<div style="height:2px;"></div>
+				</div>
+				<div id=settings style="display:none; background-color:black; width:350px;">
+					<div id="mainSettings">
+						<div style="height:2px;"></div>
+						<button onclick="document.getElementById('displaySettings').style.display='block'; document.getElementById('mainSettings').style.display='none';">display settings</button>
+						<div style="height:2px;"></div>
+						<button onclick="document.getElementById('startupSettings').style.display='block'; document.getElementById('mainSettings').style.display='none';">startup settings</button>
+						<div style="height:2px;"></div>
+						<button onclick="document.getElementById('miscSettings').style.display='block'; document.getElementById('mainSettings').style.display='none';">misc settings</button>
+						<div style="height:5px;"></div>
+					</div>
+					<div id="displaySettings" style="display:none;">
+						<div style="height:2px;"></div>
+						<label>display date and time:</label><select id="setting1"><option value=y>yes (default)</option><option value=n>no</option></select>
+						<div style="height:2px;"></div>
+						<label>display greetings:</label><select id="setting2"><option value=y>yes (default)</option><option value=n>no</option></select>
+						<div style="height:2px;"></div>
+						<label>display seconds for time:</label><select id="setting6"><option value="n">no (default)</option><option value="y">yes</option></select>
+						<div style="height:2px;"></div>
+						<label>display suggested sites:</label><select id="setting7"><option value="n">no (default)</option><option value="y">yes</option></select>
+						<div style="height:2px;"></div>
+						<label>12-hour or 24-hour time</label><select id="setting8"><option value="y">12-hour</option><option value="n">24-hour</option></select>
+						<div style="height:2px;"></div>
+						<button onclick="mainMenu()">go back</button>
+						<div style="height:5px;"></div>
+					</div>
+					<div id="miscSettings" style="display:none;">
+						<label title="refill mode is something that you use when you can't find on one search engine. just click the button and poof! it's back there for you! if you are worried about cookies, they can be forever destoryed after you refill.">refill mode:</label><select id="setting4"><option value=n>no (default)</option><option value=y>yes</option></select>
+						<div style="height:2px;"></div>
+						<button onclick="mainMenu()">go back</button>
+						<div style="height:5px;"></div>
+					</div>
+					<div id="startupSettings" style="display:none;">
+						<label>start weather widget on startup:</label><select id="setting5"><option value="n">no (default)</option><option value="y">yes</option></select>
+						<div style="height:2px;"></div>
+						<button onclick="mainMenu()">go back</button>
+						<div style="height:5px;"></div>
+					</div>
+					<button onclick="saveSettings()">save & close</button>
+					<div style="height:2px;"></div>
+				</div>
+				<div id="suggestedSites" style="display:none; background-color:black; width:500px; height:70px; padding-right:10px; padding-left:10px;">
+					<div style="height:5px;"></div>
+					<p><a href="https://facebook.com">facebook</a> | <a href="https://twitter.com">twitter</a> | <a href="https://youtube.com">youtube</a> | <a href="https://amazon.com">amazon</a> | <a href="https://ebay.com">ebay</a> | <a href="https://discordapp.com">discord</a> | <a href="https://netflix.com">netflix</a> | <a href="https://hulu.com">hulu</a><br>
+					<a href="https://reddit.com">reddit</a></p>
+					<div style="height:5px;"></div>
+				</div>
+			</center>
+		<style id="backgroundId"></style>
+		<style id="over1920"></style>
+		<script src="js/index.js"></script>
+		<script src="js/resize.js"></script>
+	</body>
+</html>
