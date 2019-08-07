@@ -6,7 +6,6 @@
 		<link rel="shortcut icon" href="https://raw.githubusercontent.com/n0rmancodes/simplesearch/master/img/favicon.ico">
 		<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-		<script src="js/head.js"></script>
 	</head>
 	<body id=body>
 		<div id="tippyTopSpacer" style="height:1px;"></div>
@@ -21,9 +20,9 @@
 				<h1 id="title">simplesearch</h1>
 				<h2 id="welcome" style="display: block;" onclick="genWel()"></h2>
 				<p id="datetime" style="display: block;"></p>
-				<p id="footer" style="font-size:10px;"><a style="font-size:10px;" href="#" onclick="genforecast()">weather</a> | <a style="font-size:10px;" href="https://github.com/n0rmancodes/simplesearch">github repo</a> | <a style="font-size:10px;" onclick="disclaimer()" href="#">disclaimer</a> | <a style="font-size:10px;" href="#" onclick="more()">more options</a></p>
+				<p id="footer" style="font-size:10px;"><a style="font-size:10px;" href="#" onclick="genforecast()">weather</a> | <a style="font-size:10px;" href="https://github.com/n0rmancodes/simplesearch">github repo</a> | <a style="font-size:10px;" onclick="disclaimer()" href="#">disclaimer</a> | photo credit: <b><span id="pC"></span></b> | <a style="font-size:10px;" href="#" onclick="more()">more options</a></p>
 				<input id="search" autocomplete="off" placeholder="search now" maxlength="100" title="change your search engine with the box on the side."><select id="se"><option selected value="google">google</option><option value="ddg" selected="selected">duckduckgo</option><option value="yahoo">yahoo!</option><option value="bing">bing</option><option value="dp">dogpile</option><option value="ask">ask</option><option value="yandex">yandex</option><option value="webcrawler">webcrawler</option><option disabled>------</option><option value="amzn">amazon</option><option value="ebay">ebay</option></select><button onclick="search()">search</button><button id="ifl-btn" onclick=ifl()>i'm feeling lucky</button>
-				<div id="prevSearchDiv" style="display:none;"><p id="pS" style="font-size:12px;">the last thing you searched was: "<span id="prevSearchTxt"></span>". if it didn't work, you can <a onclick="refill()" href="#">refill it</a> or <a onclick="destroyRefill()" href="#">destroy it</a>.</p></div>
+				<div id="alertsDiv" style="display:none;"><p id="alerts" style="font-size:12px;"></p></div>
 				<div style="height:5px;"></div>
 			</center></div>
 			<div id=spacer style="height:5px;"></div>
@@ -68,8 +67,6 @@
 						<label>display date and time:</label><select id="setting1"><option value=y>yes (default)</option><option value=n>no</option></select>
 						<div style="height:2px;"></div>
 						<label>display greetings:</label><select id="setting2"><option value=y>yes (default)</option><option value=n>no</option></select>
-						<div style="height:2px;"></div>
-						<label>display photo credit (using alert):</label><select id="setting3"><option value=n>no (default)</option><option value=y>yes</option></select>
 						<div style="height:2px;"></div>
 						<label>display seconds for time:</label><select id="setting6"><option value="n">no (default)</option><option value="y">yes</option></select>
 						<div style="height:2px;"></div>
