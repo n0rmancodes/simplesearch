@@ -11,6 +11,12 @@ s.addEventListener("keydown", function (e) {
 	}
 });
 
+b.addEventListener("keydown", function (e) {
+	if (e.keyCode == 119) {
+		getBackground();
+	}
+});
+
 setInterval(function() {
 	genDate()
 }, 100);
@@ -74,7 +80,7 @@ function ifl() {
 }
 
 function genWel() {
-	var wel = ["what's up?", "i hope your day is well.", "smile!", "start seaching.", "relax.", "enjoy what you have.", "always stay humble and kind!", "yes, we're open.", 'fun fact: mcdonalds calls frequent buyers of their food "heavy users"', "love yourself.", "be positive.", "how's the weather out there?", "the largest recorded snowflake was in montana. it was 15 inches wide"];
+	var wel = ["what's up?", "i hope your day is well.", "smile!", "start seaching.", "relax.", "enjoy what you have.", "always stay humble and kind!", "yes, we're open.", "never change for someone who doesn't matter.", "be yourself!"];
 	var weltxt = wel[Math.floor(Math.random() * wel.length)];
 	document.getElementById("welcome").innerHTML = weltxt;
 }
@@ -243,10 +249,9 @@ function dispSuggested() {
 
 
 function getBackground() {
-	var backs = ["img/1.jpg", "img/2.jpg", "img/3.jpg", "img/4.jpg", "img/5.jpg", "img/6.jpg", "img/7.jpg", "img/8.jpg", "img/9.jpg", "img/10.jpg", "img/11.jpg", "img/12.jpg", "img/13.jpg"];
+	var backs = ["img/1.jpg", "img/2.jpg", "img/3.jpg", "img/4.jpg", "img/5.jpg", "img/6.jpg", "img/7.jpg", "img/8.jpg", "img/9.jpg", "img/10.jpg", "img/11.jpg", "img/12.jpg", "img/13.jpg", "img/14.jpg", "img/15.jpg", "img/16.jpg", "img/17.jpg", "img/18.jpg"];
 	var curBack = backs[Math.floor(Math.random() * backs.length)];
-	document.write("<link rel='stylesheet' href='css/darkb.css' type='text/css'>");
-	document.write('<style> body {background-image: url("'+ curBack + '")} </style>');
+	document.getElementById("backgroundId").innerHTML =('body {background-image: url("'+ curBack + '")}');
 	if (curBack === "img/1.jpg") {var credit = "StockSnap from Pixabay"};
 	if (curBack === "img/2.jpg") {var credit = "Micha Sager from Pixabay"};
 	if (curBack === "img/3.jpg") {var credit = "David Mark from Pixabay"};
@@ -260,6 +265,11 @@ function getBackground() {
 	if (curBack === "img/11.jpg") {var credit = "Devanath from Pixabay"};
 	if (curBack === "img/12.jpg") {var credit = "sergei akulich from Pixabay"}
 	if (curBack === "img/13.jpg") {var credit = "Walkerssk from Pixabay"}
+	if (curBack === "img/14.jpg") {var credit = "Dani Géza from Pixabay"}
+	if (curBack === "img/15.jpg") {var credit = "David Mark from Pixabay"}
+	if (curBack === "img/16.jpg") {var credit = "Free-Photos from Pixabay"}
+	if (curBack === "img/17.jpg") {var credit = "Dan Fador from Pixabay"}
+	if (curBack === "img/18.jpg") {var credit = "Noel Bauza from Pixabay"}
 	document.getElementById("pC").innerHTML = credit;
 }
 
