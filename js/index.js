@@ -30,6 +30,7 @@ function onloadall() {
 	settingsCheck();
 	if (!localStorage.getItem("ss_cookie")) {disclaimer(); localStorage.setItem("ss_cookie", "obtained")}
 	document.getElementById("se").value = localStorage.getItem('ss_engine');
+	if (!localStorage.getItem("ss_engine")) {document.getElementById("se").value = "google"; localStorage.setItem("ss_engine", "google")}
 	if (localStorage.getItem("ss_s5") === "y") {genforecast();}
 	dispSuggested();
 	getBackground();
