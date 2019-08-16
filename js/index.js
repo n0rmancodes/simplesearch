@@ -161,21 +161,27 @@ function removeCookies() {
 }
 
 function settingsCheck() {
-	if (!localStorage.getItem("ss_s1") | !localStorage.getItem("ss_s2") | !localStorage.getItem("ss_s3") | !localStorage.getItem("ss_s4") | !localStorage.getItem("ss_s5") | !localStorage.getItem("ss_s6") | !localStorage.getItem("ss_s7") | !localStorage.getItem("ss_s8")) {defaultSettings();}
 	if (localStorage.getItem('ss_s1') === "n") {document.getElementById("datetime").style.display = 'none'; document.getElementById('setting1').value = 'n';}
 	if (localStorage.getItem('ss_s1') === "y") {document.getElementById("datetime").style.display = 'block'; document.getElementById('setting1').value = 'y';}	
+	if (!localStorage.getItem('ss_s1')) {defaultSettings();}
 	if (localStorage.getItem('ss_s2') === "n") {document.getElementById("welcome").style.display = 'none'; document.getElementById('setting2').value = 'n';}
 	if (localStorage.getItem('ss_s2') === "y") {document.getElementById("welcome").style.display = 'block'; document.getElementById('setting2').value = 'y';}
+	if (!localStorage.getItem('ss_s2')) {defaultSettings();}
 	if (localStorage.getItem('ss_s4') === "n") {document.getElementById('setting4').value = "n";}
 	if (localStorage.getItem('ss_s4') === "y") {document.getElementById('setting4').value = "y"; startRefill();}
+	if (!localStorage.getItem('ss_s4')) {defaultSettings();}
 	if (localStorage.getItem('ss_s5') === "n") {document.getElementById('setting5').value = "n";}
 	if (localStorage.getItem('ss_s5') === "y") {document.getElementById('setting5').value = "y";}
+	if (!localStorage.getItem('ss_s5')) {defaultSettings();}
 	if (localStorage.getItem('ss_s6') === "n") {document.getElementById('setting6').value = "n";}
 	if (localStorage.getItem('ss_s6') === "y") {document.getElementById('setting6').value = "y";}
+	if (!localStorage.getItem('ss_s6')) {defaultSettings();}
 	if (localStorage.getItem('ss_s7') === "n") {document.getElementById('setting7').value = "n";}
 	if (localStorage.getItem('ss_s7') === "y") {document.getElementById('setting7').value = "y";}
+	if (!localStorage.getItem('ss_s7')) {defaultSettings();}
 	if (localStorage.getItem('ss_s8') === "n") {document.getElementById('setting8').value = "n";}
 	if (localStorage.getItem('ss_s8') === "y") {document.getElementById('setting8').value = "y";}
+	if (!localStorage.getItem('ss_s8')) {defaultSettings();}
 }
 
 function defaultSettings() {
@@ -244,7 +250,7 @@ function dispSuggested() {
 }
 
 function getBackground() {
-	var backs = ["img/1.jpg", "img/2.jpg", "img/3.jpg", "img/4.jpg", "img/5.jpg", "img/6.jpg", "img/7.jpg", "img/8.jpg", "img/9.jpg", "img/10.jpg", "img/11.jpg", "img/12.jpg", "img/13.jpg", "img/14.jpg", "img/15.jpg", "img/16.jpg", "img/17.jpg", "img/18.jpg"];
+	var backs = ["img/1.jpg", "img/2.jpg", "img/3.jpg", "img/4.jpg", "img/5.jpg", "img/6.jpg", "img/7.jpg", "img/8.jpg", "img/9.jpg", "img/10.jpg", "img/11.jpg", "img/12.jpg", "img/13.jpg", "img/14.jpg", "img/15.jpg", "img/16.jpg", "img/17.jpg", "img/18.jpg", "img/19.jpg", "img/20.jpg", "img/20.jpg"];
 	var curBack = backs[Math.floor(Math.random() * backs.length)];
 	document.getElementById("backgroundId").innerHTML =('body {background-image: url("'+ curBack + '")}');
 	if (curBack === "img/1.jpg") {var credit = "StockSnap from Pixabay"};
@@ -265,6 +271,9 @@ function getBackground() {
 	if (curBack === "img/16.jpg") {var credit = "Free-Photos from Pixabay"}
 	if (curBack === "img/17.jpg") {var credit = "Dan Fador from Pixabay"}
 	if (curBack === "img/18.jpg") {var credit = "Noel Bauza from Pixabay"}
+	if (curBack === "img/19.jpg") {var credit = "Walkerssk from Pixabay"}
+	if (curBack === "img/20.jpg") {var credit = "StockSnap from Pixabay"}
+	if (curBack === "img/21.jpg") {var credit = "James Wheeler from Pixabay"}
 	document.getElementById("pC").innerHTML = credit;
 }
 
