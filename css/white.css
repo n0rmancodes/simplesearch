@@ -1,14 +1,14 @@
 h1 {
 	font-family: Ubuntu;
 	font-size: 72px;
-	color: white;
+	color: black;
 	margin-bottom:0px;
 }
 
 h2 {
 	font-family: Roboto;
 	font-size: 24px;
-	color: white;
+	color: black;
 }
 
 input {
@@ -28,15 +28,15 @@ select {
 }
 
 p {
-	color: white;
+	color: black;
 	font-family: Verdana;
 	font-size: 14px;
 }
 
 a {
-  color: red;
-  font-family: Verdana;
-  font-size: 14px;
+	color: red;
+	font-family: Verdana;
+	font-size: 14px;
 }
 
 body {
@@ -50,7 +50,7 @@ body {
 label {
 	font-family: Roboto;
 	font-size: 14px;
-	color: white;
+	color: black;
 }
 
 #ajaxloader {
@@ -105,7 +105,7 @@ label {
 #header {
 	padding-left: 5px;
 	padding-right: 5px;
-	background-color:black; 
+	background-color:white; 
 	width:31%; 
 	height: 15%;
 }
@@ -116,7 +116,7 @@ label {
 }
 
 #loader {
-	background-color:black; 
+	background-color:white; 
 	width:31%; 
 	height: 15%;
 	display:none;
@@ -131,12 +131,12 @@ label {
 
 #settings {
 	display:none;
-	background-color:black;
+	background-color:white;
 	width:350px;
 }
 
 #suggestedSites {
-	display:none; background-color:black;
+	display:none; background-color:white;
 	width:500px; 
 	height:70px; 
 	padding-right:10px; 
@@ -145,6 +145,6 @@ label {
 
 #more {
 	display:none; 
-	background-color:black; 
+	background-color:white; 
 	width:200px;
 }
