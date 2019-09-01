@@ -1,5 +1,4 @@
 getSize()
-adaptShit()
 window.onresize = function(event) {
     var w = window.innerWidth;
 	var h = window.innerHeight;
@@ -31,8 +30,4 @@ function getSize() {
 	if (w < 536) {document.getElementById("title").style = "font-size:60px;"; document.getElementById("welcome").style = "font-size:20px;"; document.getElementById("header").style = "width:99%; background-color:black; height: 15%;"; document.getElementById("ifl-btn").style.display = "none";}
 	if (w < 372) {document.getElementById("title").style = "font-size:52px;"; document.getElementById("welcome").style = "font-size:20px;"; document.getElementById("header").style = "width:99%; background-color:black; height: 15%;"; document.getElementById("ifl-btn").style.display = "none";}
 	if (w < 320) {document.getElementById("title").style = "font-size:48px;"; document.getElementById("welcome").style = "font-size:20px;"; document.getElementById("header").style = "width:99%; background-color:black; height: 15%;"; document.getElementById("ifl-btn").style.display = "none";}
-}
-function adaptShit() {
-	var w = window.innerWidth;
-	if (w > 1920) {document.getElementById("over1920").innerHTML = ("body { background-size: 100%, 100% }")} else {document.getElementById("over1920").innerHTML = ""}
 }
