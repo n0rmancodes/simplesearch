@@ -1,5 +1,5 @@
 h1 {
-	font-family: Verdana;
+	font-family: Ubuntu;
 	font-size: 72px;
 	color: white;
 	margin-bottom:0px;
@@ -12,7 +12,7 @@ h1:hover {
 }
 
 h2 {
-	font-family: Arial;
+	font-family: Roboto;
 	font-size: 24px;
 	color: white;
 }
@@ -22,7 +22,7 @@ input {
 	height: 33.3px;
 	padding-top: 0px;
 	padding-bottom: 0px;
-	font-family: Arial;
+	font-family: Roboto;
 }
 
 button {
@@ -50,11 +50,11 @@ body {
 	margin:0px;
 	background-repeat:no-repeat;
 	background-attachment:fixed;
-	background-image: linear-gradient(180deg, rgba(0,176,255,1) 0%, rgba(0,22,255,1) 100%);
+	background-color:#282828;
 }
 
 label {
-	font-family: Arial;
+	font-family: Roboto;
 	font-size: 14px;
 	color: white;
 }
