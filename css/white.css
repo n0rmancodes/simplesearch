@@ -25,6 +25,11 @@ input {
 	font-family: Roboto;
 }
 
+input[type="checkbox"] {
+	width:0px;
+	height:0px;
+}
+
 button {
 	height: 35px;
 }
@@ -77,18 +82,16 @@ label {
 	border-right-color: transparent;
 	border-radius: 50%;
 	animation: spin 0.5s linear infinite;
-	display:none;
 }
 
-#ajaxloader_dark {
+#ajaxloaderDark {
 	width: 30px;
 	height: 30px;
 	border: 8px solid #282828;
 	border-right-color: transparent;
 	border-radius: 50%;
 	box-shadow: 0 0 25px 2px #282828;
-	animation: spin 1s linear infinite;
-	display:none;
+	animation:spin 1s cubic-bezier(.79,.14,.15,.86) infinite;
 }
 
 @keyframes spin {

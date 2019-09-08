@@ -73,7 +73,7 @@ label {
 #ajaxloader2 {
 	width: 10px;
 	height: 10px;
-	border: 5px solid #fff;
+	border: 5px solid #808080;
 	border-right-color: transparent;
 	border-radius: 50%;
 	animation: spin 0.5s linear infinite;

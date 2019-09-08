@@ -170,9 +170,6 @@ function settingsCheck() {
 	if (localStorage.getItem('ss_s4') === "n") {document.getElementById('setting4').value = "n";}
 	if (localStorage.getItem('ss_s4') === "y") {document.getElementById('setting4').value = "y"; startRefill();}
 	if (!localStorage.getItem('ss_s4')) {defaultSettings();}
-	if (localStorage.getItem('ss_s5') === "n") {document.getElementById('setting5').value = "n";}
-	if (localStorage.getItem('ss_s5') === "y") {document.getElementById('setting5').value = "y";}
-	if (!localStorage.getItem('ss_s5')) {defaultSettings();}
 	if (localStorage.getItem('ss_s6') == "n") {document.getElementById('setting6').value = "n";}
 	if (localStorage.getItem('ss_s6') == "y") {document.getElementById('setting6').value = "y";}
 	if (!localStorage.getItem('ss_s6')) {defaultSettings();}
@@ -192,7 +189,6 @@ function defaultSettings() {
 	document.getElementById("setting1").value = 'y';
 	document.getElementById("setting2").value = 'y';
 	document.getElementById("setting4").value = 'n';
-	document.getElementById("setting5").value = 'n';
 	document.getElementById("setting6").value = 'n';
 	document.getElementById("setting7").value = 'n';
 	document.getElementById("setting8").value = 'y';
@@ -204,7 +200,6 @@ function saveSettings() {
 	localStorage.setItem("ss_s1", document.getElementById('setting1').value);
 	localStorage.setItem("ss_s2", document.getElementById('setting2').value);
 	localStorage.setItem("ss_s4", document.getElementById('setting4').value);
-	localStorage.setItem("ss_s5", document.getElementById('setting5').value);
 	localStorage.setItem("ss_s6", document.getElementById('setting6').value);
 	localStorage.setItem("ss_s7", document.getElementById('setting7').value);
 	localStorage.setItem("ss_s8", document.getElementById('setting8').value);
@@ -240,7 +235,6 @@ function destroyRefill() {
 function mainMenu() {
 	document.getElementById('displaySettings').style.display = 'none';
 	document.getElementById('miscSettings').style.display = 'none';
-	document.getElementById('startupSettings').style.display = 'none'
 	document.getElementById('mainSettings').style.display = 'block';
 }
 

@@ -33,9 +33,10 @@ function onloadall() {
 	if (!localStorage.getItem("ss_cookie")) {disclaimer(); localStorage.setItem("ss_cookie", "obtained")}
 	document.getElementById("se").value = localStorage.getItem('ss_engine');
 	if (!localStorage.getItem("ss_engine")) {document.getElementById("se").value = "google"; localStorage.setItem("ss_engine", "google")}
-	if (localStorage.getItem("ss_s5") === "y") {genforecast();}
+	if (localStorage.getItem("ss_s5") === "y") {genForecast();}
 	dispSuggested();
 	getBackground();
+	getBackground(); 
 	document.getElementById("loader").style.display = "none";
 	document.getElementById("tippyTopSpacer").style.display = "none";
 	if (!localStorage.getItem("supportMe")) {document.getElementById("support").style.display = 'block';}
@@ -132,8 +133,8 @@ function genDate() {
 	if (!localStorage.getItem("ss_s6")) {document.getElementById("datetime").innerHTML = curDat;}
 }
 
-function genforecast() {
-	document.getElementById("weather").innerHTML = "<div id='loading_txt'><div id='ajaxloader_dark'></div><p style='color:black;'>please allow location settings in order for this widget to work.<br><br>please wait...</p></div>"
+function genForecast() {
+	document.getElementById("weather").innerHTML = "<div id='loading_txt'><div id='ajaxloaderDark'></div><p style='color:black;'>for this widget to work properly, please enable location settings.<br><br>if you are using a VPN, your weather may not be accurate.</p></div>"
 	document.getElementById("weather").style.display = "block"
 	document.getElementById("settings").style.display = "none";
 	document.getElementById("suggestedSites").style.display = "none";
@@ -266,31 +267,31 @@ function dispSuggested() {
 }
 
 function getBackground() {
-	var backs = ["img/1.jpg", "img/2.jpg", "img/3.jpg", "img/4.jpg", "img/5.jpg", "img/6.jpg", "img/7.jpg", "img/8.jpg", "img/9.jpg", "img/10.jpg", "img/11.jpg", "img/12.jpg", "img/13.jpg", "img/14.jpg", "img/15.jpg", "img/16.jpg", "img/17.jpg", "img/18.jpg", "img/19.jpg", "img/20.jpg", "img/20.jpg"];
+	var backs = ["img/01.jpg", "img/02.jpg", "img/03.jpg", "img/04.jpg", "img/05.jpg", "img/06.jpg", "img/07.jpg", "img/08.jpg", "img/09.jpg", "img/10.jpg", "img/11.jpg", "img/12.jpg", "img/13.jpg", "img/14.jpg", "img/15.jpg", "img/16.jpg", "img/17.jpg", "img/18.jpg", "img/19.jpg", "img/20.jpg", "img/20.jpg"];
 	var curBack = backs[Math.floor(Math.random() * backs.length)];
 	document.getElementById("backgroundId").innerHTML =('body {background-image: url("'+ curBack + '")}');
-	if (curBack === "img/1.jpg") {var credit = "StockSnap from Pixabay"};
-	if (curBack === "img/2.jpg") {var credit = "Micha Sager from Pixabay"};
-	if (curBack === "img/3.jpg") {var credit = "David Mark from Pixabay"};
-	if (curBack === "img/4.jpg") {var credit = "Bessi from Pixabay"};
-	if (curBack === "img/5.jpg") {var credit = "Manfred Richter from Pixabay"};
-	if (curBack === "img/6.jpg") {var credit = "GLady from Pixabay"};
-	if (curBack === "img/7.jpg") {var credit = "GLady from Pixabay"};
-	if (curBack === "img/8.jpg") {var credit = "O18 from Pixabay"};
-	if (curBack === "img/9.jpg") {var credit = "jplenioS from Pixabay"};
+	if (curBack === "img/01.jpg") {var credit = "StockSnap from Pixabay"};
+	if (curBack === "img/02.jpg") {var credit = "Micha Sager from Pixabay"};
+	if (curBack === "img/03.jpg") {var credit = "David Mark from Pixabay"};
+	if (curBack === "img/04.jpg") {var credit = "Bessi from Pixabay"};
+	if (curBack === "img/05.jpg") {var credit = "Manfred Richter from Pixabay"};
+	if (curBack === "img/06.jpg") {var credit = "GLady from Pixabay"};
+	if (curBack === "img/07.jpg") {var credit = "GLady from Pixabay"};
+	if (curBack === "img/08.jpg") {var credit = "O18 from Pixabay"};
+	if (curBack === "img/09.jpg") {var credit = "jplenioS from Pixabay"};
 	if (curBack === "img/10.jpg") {var credit = "pixel2013 from Pixabay"};
 	if (curBack === "img/11.jpg") {var credit = "Devanath from Pixabay"};
-	if (curBack === "img/12.jpg") {var credit = "sergei akulich from Pixabay"}
-	if (curBack === "img/13.jpg") {var credit = "Walkerssk from Pixabay"}
-	if (curBack === "img/14.jpg") {var credit = "Dani Géza from Pixabay"}
-	if (curBack === "img/15.jpg") {var credit = "David Mark from Pixabay"}
-	if (curBack === "img/16.jpg") {var credit = "Free-Photos from Pixabay"}
-	if (curBack === "img/17.jpg") {var credit = "Dan Fador from Pixabay"}
-	if (curBack === "img/18.jpg") {var credit = "Noel Bauza from Pixabay"}
-	if (curBack === "img/19.jpg") {var credit = "Walkerssk from Pixabay"}
-	if (curBack === "img/20.jpg") {var credit = "StockSnap from Pixabay"}
-	if (curBack === "img/21.jpg") {var credit = "James Wheeler from Pixabay"}
-	if (curBack === "img/22.jpg") {var credit = "Pexels from Pixabay"}
+	if (curBack === "img/12.jpg") {var credit = "sergei akulich from Pixabay"};
+	if (curBack === "img/13.jpg") {var credit = "Walkerssk from Pixabay"};
+	if (curBack === "img/14.jpg") {var credit = "Dani Géza from Pixabay"};
+	if (curBack === "img/15.jpg") {var credit = "David Mark from Pixabay"};
+	if (curBack === "img/16.jpg") {var credit = "Free-Photos from Pixabay"};
+	if (curBack === "img/17.jpg") {var credit = "Dan Fador from Pixabay"};
+	if (curBack === "img/18.jpg") {var credit = "Noel Bauza from Pixabay"};
+	if (curBack === "img/19.jpg") {var credit = "Walkerssk from Pixabay"};
+	if (curBack === "img/20.jpg") {var credit = "StockSnap from Pixabay"};
+	if (curBack === "img/21.jpg") {var credit = "James Wheeler from Pixabay"};
+	if (curBack === "img/22.jpg") {var credit = "Pexels from Pixabay"};
  	document.getElementById("pC").innerHTML = credit;
 }
 

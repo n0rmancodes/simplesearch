@@ -14,9 +14,9 @@
 			</div>
 			<div id="loader">
 				<div style="height:1px;"></div>
-				<p style="font-family:Arial; color:white;">if you are seeing this for more than a split second, this means your internet or your computer may be too slow. to fix this from continously loading for long periods of time, try the faster version <a href="slowernet">here</a></p>
+				<p style="font-family:Arial; color:gray;">if you are seeing this for more than a split second, this means your internet may be too slow, or you have JavaScript disabled. Please enable JavaScript for SimpleSearch to work.</p>
 				<div id="ajaxloader2"></div>
-				<div style="height:1px;"></div>
+				<div style="height:3px;"></div>
 			</div>
 			<div id="header">
 				<h1 id="title">simplesearch</h1>
@@ -53,8 +53,6 @@
 						<div style="height:2px;"></div>
 						<button onclick="document.getElementById('displaySettings').style.display='block'; document.getElementById('mainSettings').style.display='none';">display settings</button>
 						<div style="height:2px;"></div>
-						<button onclick="document.getElementById('startupSettings').style.display='block'; document.getElementById('mainSettings').style.display='none';">startup settings</button>
-						<div style="height:2px;"></div>
 						<button onclick="document.getElementById('miscSettings').style.display='block'; document.getElementById('mainSettings').style.display='none';">misc settings</button>
 						<div style="height:5px;"></div>
 					</div>
@@ -77,12 +75,6 @@
 					</div>
 					<div id="miscSettings" style="display:none;">
 						<label title="refill mode is something that you use when you can't find on one search engine. just click the button and poof! it's back there for you! if you are worried about cookies, they can be forever destoryed after you refill.">refill mode:</label><select id="setting4"><option value=n>no (default)</option><option value=y>yes</option></select>
-						<div style="height:2px;"></div>
-						<button onclick="mainMenu()">go back</button>
-						<div style="height:5px;"></div>
-					</div>
-					<div id="startupSettings" style="display:none;">
-						<label>start weather widget on startup:</label><select id="setting5"><option value="n">no (default)</option><option value="y">yes</option></select>
 						<div style="height:2px;"></div>
 						<button onclick="mainMenu()">go back</button>
 						<div style="height:5px;"></div>
