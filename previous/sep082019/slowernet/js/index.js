@@ -33,10 +33,8 @@ function onloadall() {
 	if (!localStorage.getItem("ss_cookie")) {disclaimer(); localStorage.setItem("ss_cookie", "obtained")}
 	document.getElementById("se").value = localStorage.getItem('ss_engine');
 	if (!localStorage.getItem("ss_engine")) {document.getElementById("se").value = "google"; localStorage.setItem("ss_engine", "google")}
-	if (localStorage.getItem("ss_s5") === "y") {genForecast();}
+	if (localStorage.getItem("ss_s5") === "y") {genforecast();}
 	dispSuggested();
-	getBackground();
-	getBackground(); 
 	document.getElementById("loader").style.display = "none";
 	document.getElementById("tippyTopSpacer").style.display = "none";
 	if (!localStorage.getItem("supportMe")) {document.getElementById("support").style.display = 'block';}
@@ -133,21 +131,6 @@ function genDate() {
 	if (!localStorage.getItem("ss_s6")) {document.getElementById("datetime").innerHTML = curDat;}
 }
 
-function genForecast() {
-	document.getElementById("weather").innerHTML = "<div id='loading_txt'><div id='ajaxloaderDark'></div><p style='color:black;'>for this widget to work properly, please enable location settings.<br><br>if you are using a VPN, your weather may not be accurate.</p></div>"
-	document.getElementById("weather").style.display = "block"
-	document.getElementById("settings").style.display = "none";
-	document.getElementById("suggestedSites").style.display = "none";
-	document.getElementById("more").style.display = "none";
-	navigator.geolocation.getCurrentPosition(function(location) {
-		document.getElementById("weather").innerHTML = "<div id='ajaxloader_dark'></div><p style='color:black;'>loading site...</p>"
-		var x = document.getElementById("weather")
-		var latitude = location.coords.latitude
-		var longitude = location.coords.longitude
-		var embed = '<iframe id="forecast_embed" frameborder="0" height="250" width="650" src="https://forecast.io/embed/#lat=' + latitude + '&lon=' + longitude + '&name=Your Location"></iframe><br><button onclick="closeWeather()">close</button><center>'
-		x.innerHTML = embed;
-})};
-
 function more() {
 	document.getElementById("more").style.display = 'block';
 	document.getElementById("weather").style.display = "none";
@@ -187,9 +170,6 @@ function settingsCheck() {
 	if (localStorage.getItem('ss_s4') === "n") {document.getElementById('setting4').value = "n";}
 	if (localStorage.getItem('ss_s4') === "y") {document.getElementById('setting4').value = "y"; startRefill();}
 	if (!localStorage.getItem('ss_s4')) {defaultSettings();}
-	if (localStorage.getItem('ss_s5') === "n") {document.getElementById('setting5').value = "n";}
-	if (localStorage.getItem('ss_s5') === "y") {document.getElementById('setting5').value = "y";}
-	if (!localStorage.getItem('ss_s5')) {defaultSettings();}
 	if (localStorage.getItem('ss_s6') == "n") {document.getElementById('setting6').value = "n";}
 	if (localStorage.getItem('ss_s6') == "y") {document.getElementById('setting6').value = "y";}
 	if (!localStorage.getItem('ss_s6')) {defaultSettings();}
@@ -209,7 +189,6 @@ function defaultSettings() {
 	document.getElementById("setting1").value = 'y';
 	document.getElementById("setting2").value = 'y';
 	document.getElementById("setting4").value = 'n';
-	document.getElementById("setting5").value = 'n';
 	document.getElementById("setting6").value = 'n';
 	document.getElementById("setting7").value = 'n';
 	document.getElementById("setting8").value = 'y';
@@ -221,7 +200,6 @@ function saveSettings() {
 	localStorage.setItem("ss_s1", document.getElementById('setting1').value);
 	localStorage.setItem("ss_s2", document.getElementById('setting2').value);
 	localStorage.setItem("ss_s4", document.getElementById('setting4').value);
-	localStorage.setItem("ss_s5", document.getElementById('setting5').value);
 	localStorage.setItem("ss_s6", document.getElementById('setting6').value);
 	localStorage.setItem("ss_s7", document.getElementById('setting7').value);
 	localStorage.setItem("ss_s8", document.getElementById('setting8').value);
@@ -257,7 +235,6 @@ function destroyRefill() {
 function mainMenu() {
 	document.getElementById('displaySettings').style.display = 'none';
 	document.getElementById('miscSettings').style.display = 'none';
-	document.getElementById('startupSettings').style.display = 'none'
 	document.getElementById('mainSettings').style.display = 'block';
 }
 
@@ -266,52 +243,12 @@ function dispSuggested() {
 	if (localStorage.getItem("ss_s7") === "y") {document.getElementById("suggestedSites").style.display = "block";}
 }
 
-function getBackground() {
-	var backs = ["img/01.jpg", "img/02.jpg", "img/03.jpg", "img/04.jpg", "img/05.jpg", "img/06.jpg", "img/07.jpg", "img/08.jpg", "img/09.jpg", "img/10.jpg", "img/11.jpg", "img/12.jpg", "img/13.jpg", "img/14.jpg", "img/15.jpg", "img/16.jpg", "img/17.jpg", "img/18.jpg", "img/19.jpg", "img/20.jpg", "img/21.jpg", "img/22.jpg", "img/23.jpg", "img/24.jpg", "img/25.jpg", "img/26.jpg", "img/27.jpg", "img/28.jpg", "img/29.jpg", "img/30.jpg", "img/31.jpg"];
-	var curBack = backs[Math.floor(Math.random() * backs.length)];
-	document.getElementById("backgroundId").innerHTML =('body {background-image: url("'+ curBack + '")}');
-	if (curBack === "img/01.jpg") {var credit = "StockSnap from Pixabay"};
-	if (curBack === "img/02.jpg") {var credit = "Micha Sager from Pixabay"};
-	if (curBack === "img/03.jpg") {var credit = "David Mark from Pixabay"};
-	if (curBack === "img/04.jpg") {var credit = "Bessi from Pixabay"};
-	if (curBack === "img/05.jpg") {var credit = "Manfred Richter from Pixabay"};
-	if (curBack === "img/06.jpg") {var credit = "GLady from Pixabay"};
-	if (curBack === "img/07.jpg") {var credit = "GLady from Pixabay"};
-	if (curBack === "img/08.jpg") {var credit = "O18 from Pixabay"};
-	if (curBack === "img/09.jpg") {var credit = "jplenioS from Pixabay"};
-	if (curBack === "img/10.jpg") {var credit = "pixel2013 from Pixabay"};
-	if (curBack === "img/11.jpg") {var credit = "Devanath from Pixabay"};
-	if (curBack === "img/12.jpg") {var credit = "sergei akulich from Pixabay"};
-	if (curBack === "img/13.jpg") {var credit = "Walkerssk from Pixabay"};
-	if (curBack === "img/14.jpg") {var credit = "Dani Géza from Pixabay"};
-	if (curBack === "img/15.jpg") {var credit = "David Mark from Pixabay"};
-	if (curBack === "img/16.jpg") {var credit = "Free-Photos from Pixabay"};
-	if (curBack === "img/17.jpg") {var credit = "Dan Fador from Pixabay"};
-	if (curBack === "img/18.jpg") {var credit = "Noel Bauza from Pixabay"};
-	if (curBack === "img/19.jpg") {var credit = "Walkerssk from Pixabay"};
-	if (curBack === "img/20.jpg") {var credit = "StockSnap from Pixabay"};
-	if (curBack === "img/21.jpg") {var credit = "James Wheeler from Pixabay"};
-	if (curBack === "img/22.jpg") {var credit = "Pexels from Pixabay"};
-	if (curBack === "img/23.jpg") {var credit = "Fabio Grandis from Pixabay"};
-	if (curBack === "img/24.jpg") {var credit = "ma13gann from Pixabay"};
-	if (curBack === "img/25.jpg") {var credit = "lefteye81 from Pixabay"};
-	if (curBack === "img/26.jpg") {var credit = "Johannes Plenio from Pixabay"};
-	if (curBack === "img/27.jpg") {var credit = "Heri Santoso from Pixabay"};
-	if (curBack === "img/28.jpg") {var credit = "Frank Winkler from Pixabay"};
-	if (curBack === "img/29.jpg") {var credit = "Felix Mittermeier from Pixabay"};
-	if (curBack === "img/30.jpg") {var credit = "JAKO5D from Pixabay"};
-	if (curBack === "img/31.jpg") {var credit = "Free-Photos from Pixabay"};
- 	document.getElementById("pC").innerHTML = credit;
-}
-
 function linkMode() {
 	if (document.getElementById("search").placeholder === "search now") {toggleLMon();} else {toggleLMoff();}
 }
 
 function toggleLMoff() {
 	document.getElementById("search").placeholder = "search now";
-	document.getElementById("se").style.display = "";
-	document.getElementById("search").style	= "width: 242px;"
 	document.getElementById("alerts").innerHTML = "Link mode has been turned off."
 	document.getElementById("alertsDiv").style.display = "block";
 	setTimeout(function () {
@@ -331,8 +268,6 @@ function goToLink() {
 
 function toggleLMon() {
 	document.getElementById("search").placeholder = "type in a link"
-	document.getElementById("se").style.display = "none";
-	document.getElementById("search").style	= "width: 335px;"
 	document.getElementById("alerts").innerHTML = "Link mode has been turned on."
 	document.getElementById("alertsDiv").style.display = "block";
 	setTimeout(function () {
