@@ -36,7 +36,6 @@ function onloadall() {
 	if (localStorage.getItem("ss_s5") === "y") {genForecast();}
 	dispSuggested();
 	getBackground();
-	getBackground(); 
 	document.onreadystatechange = () => {
 		if (document.readyState === 'complete') {
 			document.getElementById("loader").style.display = "none";
@@ -139,7 +138,11 @@ function genDate() {
 }
 
 function genForecast() {
-	document.getElementById("weather").innerHTML = "<div id='loading_txt'><div id='ajaxloaderDark'></div><p style='color:black;'>for this widget to work properly, please enable location settings.<br><br>if you are using a VPN, your weather may not be accurate.</p></div>"
+	document.getElementById("weather").innerHTML = "<div id='loading_txt'><div id='ajaxloaderDark'></div><p style='color:black;'>for this widget to work properly, please enable location settings.<br><br>if you are using a VPN, your weather may not be accurate.<br><br>the current temperature is in <span id='deg'></span> and using <span id='sUnit'></span>. to change it, visit the settings. (settings > misc settings > weather units)</p></div>"
+	if (localStorage.getItem("ss_unit") === "us") {document.getElementById("deg").innerHTML = "fahrenhiet"; document.getElementById("sUnit").innerHTML = "mph";}
+	if (localStorage.getItem("ss_unit") === "uk") {document.getElementById("deg").innerHTML = "celcius"; document.getElementById("sUnit").innerHTML = "mph";}
+	if (localStorage.getItem("ss_unit") === "ca") {document.getElementById("deg").innerHTML = "celcius"; document.getElementById("sUnit").innerHTML = "km/h";}
+	if (localStorage.getItem("ss_unit") === "si") {document.getElementById("deg").innerHTML = "celcius"; document.getElementById("sUnit").innerHTML = "m/s"}
 	document.getElementById("weather").style.display = "block"
 	document.getElementById("settings").style.display = "none";
 	document.getElementById("suggestedSites").style.display = "none";
@@ -149,7 +152,7 @@ function genForecast() {
 		var x = document.getElementById("weather")
 		var latitude = location.coords.latitude
 		var longitude = location.coords.longitude
-		var embed = '<iframe id="forecast_embed" frameborder="0" height="250" width="650" src="https://forecast.io/embed/#lat=' + latitude + '&lon=' + longitude + '&name=Your Location"></iframe><br><button onclick="closeWeather()">close</button><center>'
+		var embed = '<iframe id="forecast_embed" frameborder="0" height="250" width="650" src="https://forecast.io/embed/#lat=' + latitude + '&lon=' + longitude + '&name=Your Location&units=' + localStorage.getItem('ss_unit') + '"></iframe><br><button onclick="closeWeather()">close</button><center>'
 		x.innerHTML = embed;
 })};
 
@@ -219,6 +222,7 @@ function defaultSettings() {
 	document.getElementById("setting7").value = 'n';
 	document.getElementById("setting8").value = 'y';
 	document.getElementById("setting9").value = '1';
+	document.getElementById("unit").value = 'us';
 	saveSettings();
 }
 
@@ -231,6 +235,7 @@ function saveSettings() {
 	localStorage.setItem("ss_s7", document.getElementById('setting7').value);
 	localStorage.setItem("ss_s8", document.getElementById('setting8').value);
 	localStorage.setItem("ss_s9", document.getElementById('setting9').value);
+	localStorage.setItem("ss_unit", document.getElementById("unit").value);
 	document.getElementById('settings').style.display = 'none';
 	if (localStorage.getItem("ss_s7") === "y") {document.getElementById("suggestedSites").style.display = "block";}
 	location.reload();
@@ -306,7 +311,16 @@ function getBackground() {
 	if (curBack === "img/29.jpg") {var credit = "Felix Mittermeier from Pixabay"};
 	if (curBack === "img/30.jpg") {var credit = "JAKO5D from Pixabay"};
 	if (curBack === "img/31.jpg") {var credit = "Free-Photos from Pixabay"};
- 	document.getElementById("pC").innerHTML = credit;
+	if (curBack === "img/32.jpg") {var credit = "skeeze from Pixabay"};
+	if (curBack === "img/33.jpg") {var credit = "Manolo Franco from Pixabay"};
+	if (curBack === "img/34.jpg") {var credit = "RÜŞTÜ BOZKUŞ from Pixabay"}
+	if (curBack === "img/35.jpg") {var credit = "skeeze from Pixabay"};
+	if (curBack === "img/36.jpg") {var credit = "blizniak from Pixabay"};
+	if (curBack === "img/37.jpg") {var credit = "Frank Winkler from Pixabay"};
+	if (curBack === "img/38.jpg") {var credit = "RÜŞTÜ BOZKUŞ from Pixabay"};
+	if (curBack === "img/39.jpg") {var credit = "Johannes Plenio from Pixabay"};
+	if (curBack === "img/40.jpg") {var credit = "skeeze from Pixabay"};
+   	document.getElementById("pC").innerHTML = credit;
 }
 
 function linkMode() {
