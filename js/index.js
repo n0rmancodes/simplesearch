@@ -84,7 +84,7 @@ function ifl() {
 	document.getElementById("more").style.display = "none";
 	document.getElementById("suggestedSites").style.display = "none";
 	var query = encodeURIComponent(document.getElementById("search").value);
-	var url = "http://www.google.com/search?q=" + query + "&btnI";
+	var url = "http://www.google.com/search?q=" + encodeURI(query) + "&btnI";
 	if (localStorage.getItem('ss_s4') === "y") {localStorage.setItem("ss_prevSearch", document.getElementById("search").value)}
 	window.open(url, "_self");	
 }
