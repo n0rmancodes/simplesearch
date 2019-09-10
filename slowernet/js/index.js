@@ -193,10 +193,23 @@ function defaultSettings() {
 	document.getElementById("setting7").value = 'n';
 	document.getElementById("setting8").value = 'y';
 	document.getElementById("setting9").value = '1';
-	saveSettings();
+	saveSettingsNR();
 }
 
 function saveSettings() {
+	localStorage.setItem("ss_s1", document.getElementById('setting1').value);
+	localStorage.setItem("ss_s2", document.getElementById('setting2').value);
+	localStorage.setItem("ss_s4", document.getElementById('setting4').value);
+	localStorage.setItem("ss_s6", document.getElementById('setting6').value);
+	localStorage.setItem("ss_s7", document.getElementById('setting7').value);
+	localStorage.setItem("ss_s8", document.getElementById('setting8').value);
+	localStorage.setItem("ss_s9", document.getElementById('setting9').value);
+	document.getElementById('settings').style.display = 'none';
+	if (localStorage.getItem("ss_s7") === "y") {document.getElementById("suggestedSites").style.display = "block";}
+	location.reload();
+}
+
+function saveSettingsNR() {
 	localStorage.setItem("ss_s1", document.getElementById('setting1').value);
 	localStorage.setItem("ss_s2", document.getElementById('setting2').value);
 	localStorage.setItem("ss_s4", document.getElementById('setting4').value);
