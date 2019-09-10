@@ -37,8 +37,12 @@ function onloadall() {
 	dispSuggested();
 	getBackground();
 	getBackground(); 
-	document.getElementById("loader").style.display = "none";
-	document.getElementById("tippyTopSpacer").style.display = "none";
+	document.onreadystatechange = () => {
+		if (document.readyState === 'complete') {
+			document.getElementById("loader").style.display = "none";
+			document.getElementById("tippyTopSpacer").style.display = "none";
+		}
+	};
 	if (!localStorage.getItem("supportMe")) {document.getElementById("support").style.display = 'block';}
 }
 
@@ -66,6 +70,7 @@ function search() {
 	if (se === "qwant") {var search = "https://www.qwant.com/?q=" + query + "&t=web";}
 	if (se === "moj") {var search = "https://www.mojeek.com/search?q=" + query;} 
 	if (se === "ger") {var search = "https://metager.org/meta/meta.ger3?eingabe=" + query + "&focus=web";}
+	if (se === "eco") {var search = "https://www.ecosia.org/search?q=" + query;}
 	if (localStorage.getItem('ss_s4') === "y") {localStorage.setItem("ss_prevSearch", document.getElementById("search").value);}
 	localStorage.setItem('ss_engine', se)
 	window.open(search, "_self");		
