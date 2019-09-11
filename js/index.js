@@ -344,7 +344,7 @@ function linkMode() {
 function toggleLMoff() {
 	document.getElementById("search").placeholder = "search now";
 	document.getElementById("se").style.display = "";
-	document.getElementById("search").style	= "width: 242px;"
+	document.getElementById("search").style	= "width:40%;"
 	document.getElementById("alerts").innerHTML = "Link mode has been turned off."
 	document.getElementById("alertsDiv").style.display = "block";
 	setTimeout(function () {
@@ -365,7 +365,7 @@ function goToLink() {
 function toggleLMon() {
 	document.getElementById("search").placeholder = "type in a link"
 	document.getElementById("se").style.display = "none";
-	document.getElementById("search").style	= "width: 335px;"
+	document.getElementById("search").style	= "width: 45%;"
 	document.getElementById("alerts").innerHTML = "Link mode has been turned on."
 	document.getElementById("alertsDiv").style.display = "block";
 	setTimeout(function () {

@@ -27,9 +27,9 @@ input {
 	font-family: Roboto;
 }
 
-input[type="checkbox"] {
-	width:0px;
-	height:0px;
+select {
+	height: 35px; 
+	width:92px;
 }
 
 button {
