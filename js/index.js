@@ -365,7 +365,7 @@ function goToLink() {
 function toggleLMon() {
 	document.getElementById("search").placeholder = "type in a link"
 	document.getElementById("se").style.display = "none";
-	document.getElementById("search").style	= "width: 40% + 92px;"
+	document.getElementById("search").style	= "width: 70%;"
 	document.getElementById("alerts").innerHTML = "Link mode has been turned on."
 	document.getElementById("alertsDiv").style.display = "block";
 	setTimeout(function () {
