@@ -4,7 +4,7 @@ var w = document.getElementById("weather");
 
 s.addEventListener("keydown", function (e) {
     if (e.keyCode == 13) {
-		search();
+		searchKey();
 	} 
 	if (e.keyCode == 115) {
 		linkMode();
@@ -45,6 +45,12 @@ function onloadall() {
 	if (!localStorage.getItem("supportMe")) {document.getElementById("support").style.display = 'block';}
 }
 
+function searchKey() {
+	document.onkeydown = function(e) {
+		if (e.ctrlKey) {ifl()} else {search()}
+	}
+}
+
 function search() {
 	if (document.getElementById("search").placeholder === "type in a link") {goToLink(); pause;}
 	var se = document.getElementById("se").value;
@@ -83,7 +89,8 @@ function ifl() {
 	document.getElementById("settings").style.display = "none";
 	document.getElementById("more").style.display = "none";
 	document.getElementById("suggestedSites").style.display = "none";
-	var query = encodeURIComponent(document.getElementById("search").value);
+	var queryA = encodeURIComponent(document.getElementById("search").value);
+	var query = queryA.replace("%20", "+").replace("%2520", "+")
 	var url = "http://www.google.com/search?q=" + encodeURI(query) + "&btnI";
 	if (localStorage.getItem('ss_s4') === "y") {localStorage.setItem("ss_prevSearch", document.getElementById("search").value)}
 	window.open(url, "_self");	
