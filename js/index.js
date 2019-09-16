@@ -366,6 +366,7 @@ function toggleLMon() {
 	document.getElementById("search").placeholder = "type in a link"
 	document.getElementById("se").style.display = "none";
 	document.getElementById("search").style	= "width: 70%;"
+	if (window.innerWidth > 1013) {document.getElementById("search").style	= "width: 60%;"}
 	document.getElementById("alerts").innerHTML = "Link mode has been turned on."
 	document.getElementById("alertsDiv").style.display = "block";
 	setTimeout(function () {
