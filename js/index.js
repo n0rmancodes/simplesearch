@@ -4,7 +4,7 @@ var w = document.getElementById("weather");
 
 s.addEventListener("keydown", function (e) {
     if (e.keyCode == 13) {
-		searchKey();
+		search();
 	} 
 	if (e.keyCode == 115) {
 		linkMode();
@@ -45,12 +45,6 @@ function onloadall() {
 	if (!localStorage.getItem("supportMe")) {document.getElementById("support").style.display = 'block';}
 }
 
-function searchKey() {
-	document.onkeydown = function(e) {
-		if (e.ctrlKey) {ifl()} else {search()}
-	}
-}
-
 function search() {
 	if (document.getElementById("search").placeholder === "type in a link") {goToLink(); pause;}
 	var se = document.getElementById("se").value;
@@ -79,21 +73,6 @@ function search() {
 	if (localStorage.getItem('ss_s4') === "y") {localStorage.setItem("ss_prevSearch", document.getElementById("search").value);}
 	localStorage.setItem('ss_engine', se)
 	window.open(search, "_self");		
-}
-
-function ifl() {
-	document.getElementById("search").disabled = true;
-	document.getElementById("se").disabled = true;
-	document.getElementById("ajaxloader").style.display = "block";
-	document.getElementById("weather").style.display = "none";
-	document.getElementById("settings").style.display = "none";
-	document.getElementById("more").style.display = "none";
-	document.getElementById("suggestedSites").style.display = "none";
-	var queryA = encodeURIComponent(document.getElementById("search").value);
-	var query = queryA.replace("%20", "+").replace("%2520", "+")
-	var url = "http://www.google.com/search?q=" + encodeURI(query) + "&btnI";
-	if (localStorage.getItem('ss_s4') === "y") {localStorage.setItem("ss_prevSearch", document.getElementById("search").value)}
-	window.open(url, "_self");	
 }
 
 function genWel() {
@@ -351,7 +330,7 @@ function linkMode() {
 function toggleLMoff() {
 	document.getElementById("search").placeholder = "search now";
 	document.getElementById("se").style.display = "";
-	document.getElementById("search").style	= "width:40%;"
+	document.getElementById("search").style	= "width:60%;"
 	document.getElementById("alerts").innerHTML = "Link mode has been turned off."
 	document.getElementById("alertsDiv").style.display = "block";
 	setTimeout(function () {
@@ -372,8 +351,8 @@ function goToLink() {
 function toggleLMon() {
 	document.getElementById("search").placeholder = "type in a link"
 	document.getElementById("se").style.display = "none";
-	document.getElementById("search").style	= "width: 70%;"
-	if (window.innerWidth > 1013) {document.getElementById("search").style	= "width: 60%;"}
+	document.getElementById("search").style	= "width: 65%;"
+	if (window.innerWidth > 1013) {document.getElementById("search").style	= "width: 75%;"}
 	document.getElementById("alerts").innerHTML = "Link mode has been turned on."
 	document.getElementById("alertsDiv").style.display = "block";
 	setTimeout(function () {
