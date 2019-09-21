@@ -8,6 +8,7 @@
 		<link id="theme" rel='stylesheet' href='css/style.css' type='text/css'>
 		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 		<script src="js/head.js"></script>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	</head>
 	<body id="body">
 		<div id="tippyTopSpacer" style="height:1px;"></div>
@@ -25,8 +26,8 @@
 				<h1 id="title">simplesearch</h1>
 				<h2 id="welcome" style="display: block;" onclick="genWel()"></h2>
 				<p id="datetime" style="display: block;"></p>
-				<p id="footer" style="font-size:10px;"><a style="font-size:10px;" href="#" onclick="genForecast()">weather</a> | <a style="font-size:10px;" href="https://github.com/n0rmancodes/simplesearch">github repo</a> | <a style="font-size:10px;" onclick="disclaimer()" href="#">disclaimer</a> | photo credit: <b><span id="pC"></span></b> | <a style="font-size:10px;" href="#" onclick="more()">more options</a></p>
-				<input id="search" autocomplete="off" placeholder="search now" maxlength="100" title="change your search engine with the box on the side."><select id="se"><option selected value="google">google</option><option value="ddg" selected="selected">duckduckgo</option><option value="yahoo">yahoo!</option><option value="bing">bing</option><option value="dp">dogpile</option><option value="ask">ask</option><option value="yandex">yandex</option><option value="webcrawler">webcrawler</option><option value="swiss">swisscows</option><option value="x">searX</option><option value="qwant">qwant</option><option value="moj">mojeek</option><option value="ger">metager</option><option value="eco">ecosia</option></select><button onclick="search()">search</button>
+				<p id="footer" style="font-size:10px;"><a style="font-size:10px;" href="#" onclick="genForecast()">weather</a> | <a style="font-size:10px;" href="https://github.com/n0rmancodes/simplesearch">github repo</a> | <a style="font-size:10px;" onclick="disclaimer()" href="#">disclaimer</a> | photo credit: <b><span id="pC"></span></b> | <a style="font-size:10px;" href="#" onclick="more();">show more</a></p>
+				<input id="search" autocomplete="off" placeholder="search now" maxlength="100" title="change your search engine with the box on the side."><select id="se"><option selected value="google">google</option><option value="ddg" selected="selected">duckduckgo</option><option value="yahoo">yahoo!</option><option value="bing">bing</option><option value="dp">dogpile</option><option value="ask">ask</option><option value="yandex">yandex</option><option value="webcrawler">webcrawler</option><option value="swiss">swisscows</option><option value="x">searX</option><option value="qwant">qwant</option><option value="moj">mojeek</option><option value="ger">metager</option><option value="eco">ecosia</option></select><button onclick="search()" style="font-size:12px; width:50px;" class="material-icons" id="searchBtn">search</button>
 				<div id="alertsDiv" style="display:none;"><p id="alerts" style="font-size:12px;"></p></div>
 				<div style="height:5px;"></div>
 			</center></div>
@@ -45,7 +46,7 @@
 					<div style="height:2px;"></div>
 					<a href="#" onclick="removeCookies()">remove all cookies</a>
 					<div style="height:5px;"></div>
-					<button onclick="document.getElementById('more').style.display='none'; if (localStorage.getItem('ss_s7') === 'y') {document.getElementById('suggestedSites').style.display = 'block';}">close</button>
+					<button onclick="document.getElementById('more').style.display='none'; if (localStorage.getItem('ss_s7') === 'y') {document.getElementById('suggestedSites').style.display = 'block';}" class="altButton">close</button>
 					<div style="height:2px;"></div>
 					<div id="support" style="display:none;">
 						<p style="text-align:right;">[<a onclick="document.getElementById('support').style.display = 'none'; localStorage.setItem('supportMe', 'proposed')" href="#">x</a>]<p>
@@ -64,7 +65,8 @@
 						<div style="height:5px;"></div>
 					</div>
 					<div id="displaySettings" style="display:none;">
-						<div style="height:2px;"></div>
+						<button onclick="mainMenu()" class="material-icons backButton">arrow_back</button>
+						<div style="height:40px;"></div>
 						<label>display date and time:</label><select id="setting1"><option value=y>yes (default)</option><option value=n>no</option></select>
 						<div style="height:2px;"></div>
 						<label>display greetings:</label><select id="setting2"><option value=y>yes (default)</option><option value=n>no</option></select>
@@ -76,25 +78,23 @@
 						<label>12-hour or 24-hour time:</label><select id="setting8"><option value="y">12-hour</option><option value="n">24-hour</option></select>
 						<div style="height:2px;"></div>
 						<label>color scheme:</label><select id="setting9"><option value="1">dark theme</option><option value="2">white theme</option><option value="3">just a gradient</option></select>
-						<div style="height:2px;"></div>
-						<button onclick="mainMenu()">go back</button>
 						<div style="height:5px;"></div>
 					</div>
 					<div id="miscSettings" style="display:none;">
+						<button onclick="mainMenu()" class="material-icons backButton">arrow_back</button>
+						<div style="height:40px;"></div>
 						<label title="refill mode is something that you use when you can't find on one search engine. just click the button and poof! it's back there for you! if you are worried about cookies, they can be forever destoryed after you refill.">refill mode:</label><select id="setting4"><option value=n>no (default)</option><option value=y>yes</option></select>
 						<div style="height:2px;"></div>
 						<label>weather units:</label><select id="unit"><option value="us">fahrenheit & mph</option><option value="uk">celcius & mph</option><option value="ca">celcius & km/h</option><option value="si">celcius & m/s</option></select>
-						<div style="height:2px;"></div>
-						<button onclick="mainMenu()">go back</button>
 						<div style="height:5px;"></div>
 					</div>
 					<div id="startupSettings" style="display:none;">
+						<button onclick="mainMenu()" class="material-icons backButton">arrow_back</button>
+						<div style="height:40px;"></div>
 						<label>start weather widget on startup:</label><select id="setting5"><option value="n">no (default)</option><option value="y">yes</option></select>
-						<div style="height:2px;"></div>
-						<button onclick="mainMenu()">go back</button>
 						<div style="height:5px;"></div>
 					</div>
-					<button onclick="saveSettings()">save & close</button>
+					<button class="altButton" onclick="saveSettings()">save & refresh</button><button class="altButton" onclick="location.reload();">discard changes</button>
 					<div style="height:2px;"></div>
 				</div>
 				<div id="suggestedSites">

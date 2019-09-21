@@ -29,15 +29,14 @@ input {
 
 select {
 	height: 35px; 
-	width:92px;
+}
+
+div {
+	border-radius:10px;
 }
 
 button {
 	height: 35px;
-}
-
-select {
-	height: 35px; 
 }
 
 p {
