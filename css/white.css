@@ -96,6 +96,10 @@ body {
 	background-repeat:no-repeat;
 	background-attachment:fixed;
 	background-color:#282828;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 }
 
 label {
