@@ -43,6 +43,7 @@ function onloadall() {
 		}
 	};
 	if (!localStorage.getItem("supportMe")) {document.getElementById("support").style.display = 'block';}
+	document.getElementById("header").style.display = ""
 }
 
 function search() {
