@@ -40,7 +40,7 @@ input[type="checkbox"] {
 button {
 	height: 35px;
 	margin-left:2px;
-	background-color:black;
+	background-color:#282828;
 	color:white;
 	border-width:0px;
 	border-radius:5px;
@@ -50,14 +50,14 @@ button {
 
 button:hover {
 	background-color:white;
-	color:black;
+	color:#282828;
 }
 
 .altButton {
 	height: 35px;
 	margin-left:2px;
 	background-color:white;
-	color:black;
+	color:#282828;
 	border-width:0px;
 	border-radius:5px;
 	-webkit-transition: background-color .5s; /* For Safari 3.1 to 6.0 */
@@ -65,7 +65,7 @@ button:hover {
 }
 
 .altButton:hover {
-	background-color:black;
+	background-color:#282828;
 	color:white;
 }
 
