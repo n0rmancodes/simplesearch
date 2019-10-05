@@ -81,6 +81,8 @@ select {
 	margin-right:2px;
 	border-radius:10px;
 	border-width:0px;
+	background-color:#282828;
+	color:white;
 }
 
 p {
