@@ -28,6 +28,8 @@ input {
 	font-family: Roboto;
 	border-radius:10px;
 	border-width:0px;
+	background-color:#282828;
+	color:white;
 }
 
 select {
