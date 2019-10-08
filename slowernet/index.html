@@ -9,14 +9,17 @@
 	<body id="body">
 		<div id="tippyTopSpacer" style="height:1px;"></div>
 		<center>
-			<div id="noJavaScript">
-				<p>Hey! It seems you don't have JavaScript on for this website. SimpleSearch needs JavaScript to work!</p>
+			<div id="noJavaScript" class="overlay">
+				<div class="overlayContent">
+					<h1 style="color:white; font-family:Verdana;">Warning!</h1>
+					<p style="color:white; font-family:Arial; font-size:18px;">Hey! It seems you don't have JavaScript on for this website. SimpleSearch needs JavaScript to work!</p>
+				</div>
 			</div>
-			<div id="loader">
-				<div style="height:1px;"></div>
-				<p style="font-family:Arial; color:gray;">if you are seeing this for more than a split second, this means your internet may be too slow, or you have JavaScript disabled. Please enable JavaScript for SimpleSearch to work.</p>
-				<div id="ajaxloader2"></div>
-				<div style="height:3px;"></div>
+			<div id="loader" class="overlay" style="display:none;">
+				<div class="overlayContent">
+					<p style="color:white; font-family:Arial; font-size:18px;">if you are seeing this for more than a split second, this means your internet or your computer may be too slow. to fix this from continously loading for long periods of time, try the faster version <a href="slowernet">here</a></p>
+					<div id="ajaxloader2"></div>
+				</div>
 			</div>
 			<div id="header">
 				<h1 id="title">simplesearch</h1>
@@ -91,5 +94,23 @@
 			</center>
 		<script src="js/index.js"></script>
 		<script src="js/resize.js"></script>
+		<style>
+			.overlay {
+				position: fixed;
+				width: 100%;
+				height: 100%;
+				left: 0;
+				top: 0;
+				background: rgba(51,51,51,0.7);
+				z-index: 10;
+			}
+			
+			.overlayContent {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+		</style>
 	</body>
 </html>

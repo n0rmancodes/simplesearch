@@ -33,11 +33,17 @@ function onloadall() {
 	if (!localStorage.getItem("ss_cookie")) {disclaimer(); localStorage.setItem("ss_cookie", "obtained")}
 	document.getElementById("se").value = localStorage.getItem('ss_engine');
 	if (!localStorage.getItem("ss_engine")) {document.getElementById("se").value = "google"; localStorage.setItem("ss_engine", "google")}
-	if (localStorage.getItem("ss_s5") === "y") {genforecast();}
+	if (localStorage.getItem("ss_s5") === "y") {genForecast();}
 	dispSuggested();
-	document.getElementById("loader").style.display = "none";
-	document.getElementById("tippyTopSpacer").style.display = "none";
+	getBackground();
+	document.onreadystatechange = () => {
+		if (document.readyState === 'complete') {
+			document.getElementById("loader").style.display = "none";
+			document.getElementById("tippyTopSpacer").style.display = "none";
+		}
+	};
 	if (!localStorage.getItem("supportMe")) {document.getElementById("support").style.display = 'block';}
+	document.getElementById("header").style.display = ""
 }
 
 function search() {
