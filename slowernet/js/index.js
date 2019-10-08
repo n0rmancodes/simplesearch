@@ -69,20 +69,6 @@ function search() {
 	window.open(search, "_self");		
 }
 
-function ifl() {
-	document.getElementById("search").disabled = true;
-	document.getElementById("se").disabled = true;
-	document.getElementById("ajaxloader").style.display = "block";
-	document.getElementById("weather").style.display = "none";
-	document.getElementById("settings").style.display = "none";
-	document.getElementById("more").style.display = "none";
-	document.getElementById("suggestedSites").style.display = "none";
-	var query = encodeURIComponent(document.getElementById("search").value);
-	var url = "http://www.google.com/search?q=" + encodeURI(query) + "&btnI";
-	if (localStorage.getItem('ss_s4') === "y") {localStorage.setItem("ss_prevSearch", document.getElementById("search").value)}
-	window.open(url, "_self");	
-}
-
 function genWel() {
 	var wel = ["what's up?", "i hope your day is well.", "smile!", "start seaching.", "relax.", "enjoy what you have.", "always stay humble and kind!", "yes, we're open.", "never change for someone who doesn't matter.", "be yourself!"];
 	var weltxt = wel[Math.floor(Math.random() * wel.length)];

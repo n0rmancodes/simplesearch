@@ -5,10 +5,12 @@ h1 {
 	margin-bottom:0px;
 	-webkit-transition: font-size 2s; /* For Safari 3.1 to 6.0 */
 	transition: font-size 2s;
+	margin-top:48.2333px;
 }
 
 h1:hover {
 	font-size: 75px;
+	margin-top:48.2333px;
 }
 
 h2 {
@@ -18,19 +20,70 @@ h2 {
 }
 
 input {
-	width: 40%;
-	height: 33.3px;
+	width: 60%;
+	height: 35px;
 	padding-top: 0px;
 	padding-bottom: 0px;
+	padding-left:2px;
 	font-family: Arial;
+	border-radius:10px;
+	border-width:0px;
+	background-color:#282828;
+	color:white;
+}
+
+input[type="checkbox"] {
+	width:0px;
+	height:0px;
 }
 
 button {
 	height: 35px;
+	margin-left:2px;
+	background-color:#282828;
+	color:white;
+	border-width:0px;
+	border-radius:5px;
+	-webkit-transition: background-color .5s; /* For Safari 3.1 to 6.0 */
+	transition: background-color .5s;
+	cursor: pointer;
+}
+
+button:hover {
+	background-color:white;
+	color:#282828;
+}
+
+.altButton {
+	height: 35px;
+	margin-left:2px;
+	background-color:white;
+	color:#282828;
+	border-width:0px;
+	border-radius:5px;
+	-webkit-transition: background-color .5s; /* For Safari 3.1 to 6.0 */
+	transition: background-color .5s;
+}
+
+.altButton:hover {
+	background-color:#282828;
+	color:white;
+}
+
+.backButton {
+	float:left;
+	margin-left:2px;
+	margin-top:2px;
 }
 
 select {
 	height: 35px; 
+	margin-left:2px;
+	margin-right:2px;
+	border-radius:10px;
+	border-width:0px;
+	background-color:#282828;
+	color:white;
 }
 
 p {
@@ -50,13 +103,21 @@ body {
 	margin:0px;
 	background-repeat:no-repeat;
 	background-attachment:fixed;
-	background-image: linear-gradient(180deg, rgba(0,176,255,1) 0%, rgba(0,22,255,1) 100%);
+	background-image:linear-gradient(180deg, rgba(0,176,255,1) 0%, rgba(0,22,255,1) 100%);
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 }
 
 label {
-	font-family: Arial;
+	font-family: Verdana;
 	font-size: 14px;
 	color: white;
+}
+
+div {
+	border-radius:10px;
 }
 
 #ajaxloader {
@@ -73,22 +134,20 @@ label {
 #ajaxloader2 {
 	width: 10px;
 	height: 10px;
-	border: 5px solid #808080;
+	border: 5px solid #fff;
 	border-right-color: transparent;
 	border-radius: 50%;
 	animation: spin 0.5s linear infinite;
-	display:none;
 }
 
-#ajaxloader_dark {
+#ajaxloaderDark {
 	width: 30px;
 	height: 30px;
 	border: 8px solid #282828;
 	border-right-color: transparent;
 	border-radius: 50%;
 	box-shadow: 0 0 25px 2px #282828;
-	animation: spin 1s linear infinite;
-	display:none;
+	animation:spin 1s cubic-bezier(.79,.14,.15,.86) infinite;
 }
 
 @keyframes spin {
