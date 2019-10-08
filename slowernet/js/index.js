@@ -11,12 +11,6 @@ s.addEventListener("keydown", function (e) {
 	}
 });
 
-b.addEventListener("keydown", function (e) {
-	if (e.keyCode == 119) {
-		getBackground();
-	}
-});
-
 setInterval(function() {
 	genDate()
 }, 100);
@@ -35,7 +29,6 @@ function onloadall() {
 	if (!localStorage.getItem("ss_engine")) {document.getElementById("se").value = "google"; localStorage.setItem("ss_engine", "google")}
 	if (localStorage.getItem("ss_s5") === "y") {genForecast();}
 	dispSuggested();
-	getBackground();
 	document.onreadystatechange = () => {
 		if (document.readyState === 'complete') {
 			document.getElementById("loader").style.display = "none";
