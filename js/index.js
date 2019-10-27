@@ -318,7 +318,7 @@ function getBackground() {
 		"img/38.jpg", 
 		"img/39.jpg", 
 		"img/40.jpg", 
-		"img/41.jpg". 
+		"img/41.jpg", 
 		"img/42.jpg", 
 		"img/43.jpg", 
 		"img/44.jpg", 
