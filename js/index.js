@@ -327,7 +327,7 @@ function getBackground() {
 		"img/47.jpg", 
 		"img/48.jpg", 
 		"img/49.jpg",
-		"img/50.jpg".
+		"img/50.jpg",
 		"img/51.jpg"
 	];
 	var curBack = backs[Math.floor(Math.random() * backs.length)];
