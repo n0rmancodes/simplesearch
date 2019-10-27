@@ -362,19 +362,3 @@ function toggleLMon() {
         document.getElementById("alertsDiv").style.display = "none";
     }, 3000);
 }
-
-function checkOS() { 
-	if (navigator.ospcu == "Win16" | navigator.ospcu == "Windows 95" | navigator.ospcu === "Win95" | navigator.ospcu == "Windows_95") {document.getElementById("OSWarn").style.display = "block";}
-	if (navigator.ospcu == "Windows NT 4.0" | navigator.ospcu == "WinNT4.0" | navigator.ospcu === "WinNT" | navigator.ospcu == "Windows NT") {document.getElementById("OSWarn").style.display = "block";}
-	if (navigator.ospcu == "Windows 98" | navigator.ospcu == "Win98") {document.getElementById("OSWarn").style.display = "block";}
-	if (navigator.ospcu == "Windows 2000" | navigator.ospcu == "Windows NT 5.0") {document.getElementById("OSWarn").style.display = "block";}
-	if (navigator.ospcu == "Windows NT 5.1" | navigator.ospcu == "Windows XP") {document.getElementById("OSWarn").style.display = "block";}
-	if (navigator.ospcu == "Windows NT 6.0") {document.getElementById("OSWarn").style.display = "block";}
-	if (navigator.ospcu == "Windows NT 5.2") {document.getElementById("OSWarn").style.display = "block";}
-	if (navigator.ospcu == "Windows 2000" | navigator.ospcu == "Windows NT 5.0") {document.getElementById("OSWarn").style.display = "block";}
-	if (navigator.ospcu == "Windows ME") {document.getElementById("OSWarn").style.display = "block";}
-}
-
-function ignoreWarn() {
-	document.getElementById("OSWarn").style.display = "none";
-}
